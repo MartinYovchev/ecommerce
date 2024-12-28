@@ -25,6 +25,7 @@ function Header() {
               height={45}
               alt="Cart"
             />
+            
           </div>
           <div className="account-button">
           <Image
