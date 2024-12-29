@@ -1,15 +1,17 @@
-import "./styles/footer.scss"
-import Image from "next/image";
+import './styles/footer.scss';
+import Image from 'next/image';
 
-
-function Footer(){
-    return (
-<footer className="footer">
+function Footer() {
+  return (
+    <footer className="footer">
       <div className="footer-container">
         {/* Brand Section */}
         <div className="footer-brand">
           <h2>Sneakers</h2>
-          <p>Step into the best. Trendy, comfy, and sustainable footwear for everyone.</p>
+          <p>
+            Step into the best. Trendy, comfy, and sustainable footwear for
+            everyone.
+          </p>
         </div>
 
         {/* Contact Section */}
@@ -26,7 +28,11 @@ function Footer(){
         <div className="footer-socials">
           <h3>Follow Us</h3>
           <div className="social-icons">
-            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
+            <a
+              href="https://facebook.com"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <Image
                 src="/facebook-icon.png"
                 alt="Facebook"
@@ -34,7 +40,11 @@ function Footer(){
                 height={50}
               />
             </a>
-            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
+            <a
+              href="https://twitter.com"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <Image
                 src="/twitter-icon.png"
                 alt="Twitter"
@@ -42,7 +52,11 @@ function Footer(){
                 height={50}
               />
             </a>
-            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
+            <a
+              href="https://instagram.com"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <Image
                 src="/instagram-icon.png"
                 alt="Instagram"
@@ -59,6 +73,6 @@ function Footer(){
         <p>&copy; {new Date().getFullYear()} Sneakers. All Rights Reserved.</p>
       </div>
     </footer>
-    )
+  );
 }
-export default Footer
+export default Footer;

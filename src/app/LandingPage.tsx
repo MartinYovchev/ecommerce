@@ -1,5 +1,5 @@
-import Image from "next/image";
-import "./styles/landingPage.scss";
+import Image from 'next/image';
+import './styles/landingPage.scss';
 
 function LandingPage() {
   return (

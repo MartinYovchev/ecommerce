@@ -1,5 +1,5 @@
-import "./styles/header.scss";
-import Image from "next/image";
+import './styles/header.scss';
+import Image from 'next/image';
 
 function Header() {
   return (
@@ -19,21 +19,10 @@ function Header() {
         </div>
         <div className="checkout-wrapper">
           <div className="cart-button">
-            <Image
-              src="/shopping-cart.png"
-              width={40}
-              height={45}
-              alt="Cart"
-            />
-            
+            <Image src="/shopping-cart.png" width={40} height={45} alt="Cart" />
           </div>
           <div className="account-button">
-          <Image
-              src="/user.png"
-              width={40}
-              height={45}
-              alt="Account"
-            />
+            <Image src="/user.png" width={40} height={45} alt="Account" />
           </div>
         </div>
       </div>
