@@ -1,4 +1,3 @@
-import { TRUE } from 'sass';
 import '../styles/footer.scss';
 import Image from 'next/image';
 
