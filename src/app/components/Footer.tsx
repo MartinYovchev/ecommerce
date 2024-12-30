@@ -1,11 +1,10 @@
-import './styles/footer.scss';
+import '../styles/footer.scss';
 import Image from 'next/image';
 
 function Footer() {
   return (
     <footer className="footer">
       <div className="footer-container">
-        {/* Brand Section */}
         <div className="footer-brand">
           <h2>Sneakers</h2>
           <p>
@@ -14,7 +13,6 @@ function Footer() {
           </p>
         </div>
 
-        {/* Contact Section */}
         <div className="footer-contact">
           <h3>Contact Us</h3>
           <ul>
@@ -24,7 +22,6 @@ function Footer() {
           </ul>
         </div>
 
-        {/* Social Media Section */}
         <div className="footer-socials">
           <h3>Follow Us</h3>
           <div className="social-icons">
@@ -68,7 +65,6 @@ function Footer() {
         </div>
       </div>
 
-      {/* Bottom Bar */}
       <div className="footer-bottom">
         <p>&copy; {new Date().getFullYear()} Sneakers. All Rights Reserved.</p>
       </div>

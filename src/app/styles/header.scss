@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;500;700&display=swap');
 
-/* Reset default styles */
 * {
   margin-left: 1rem;
   margin-right: 1rem;
@@ -9,7 +8,6 @@
   font-family: 'Kumbh Sans', sans-serif;
 }
 
-/* Header Wrapper */
 .header-wrapper {
   display: flex;
   justify-content: space-between;
@@ -18,13 +16,11 @@
   border-bottom: 1px solid #e0e0e0;
 }
 
-/* Nav Wrapper (Left Section) */
 .nav-wrapper {
   display: flex;
   align-items: center;
 }
 
-/* Head Name (Logo) */
 .head-name {
   font-size: 24px;
   font-weight: bold;
@@ -32,10 +28,9 @@
   letter-spacing: 1px;
   text-transform: uppercase;
   cursor: pointer;
-  margin-right: 0px; /* Space between logo and navigation */
+  margin-right: 0px;
 }
 
-/* Header Navigation */
 .header-navigation {
   ul {
     list-style: none;
@@ -56,7 +51,6 @@
       font-weight: 500;
     }
 
-    /* Underline effect */
     &::after {
       content: '';
       position: absolute;
@@ -75,13 +69,11 @@
   }
 }
 
-/* Checkout Wrapper (Right Section) */
 .checkout-wrapper {
   display: flex;
   align-items: center;
 }
 
-/* Cart and Account Buttons */
 .cart-button,
 .account-button {
   font-size: 16px;
@@ -92,10 +84,9 @@
     background-color 0.3s ease,
     color 0.3s ease;
   border-radius: 4px;
-  margin-left: 30px; /* Space between buttons */
+  margin-left: 30px;
 }
 
-/* Optional: Add responsiveness for small screens */
 @media (max-width: 768px) {
   .header-wrapper {
     flex-direction: column;

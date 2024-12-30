@@ -1,4 +1,5 @@
-import './styles/header.scss';
+import Link from 'next/link';
+import '../styles/header.scss';
 import Image from 'next/image';
 
 function Header() {
@@ -9,7 +10,11 @@ function Header() {
           <div className="head-name">SNEAKERS</div>
           <div className="header-navigation">
             <ul>
-              <li>Collections</li>
+              <li>
+                <Link href="/collection" passHref legacyBehavior>
+                  <a style={{ all: 'unset' }}>Collections</a>
+                </Link>
+              </li>
               <li>Men</li>
               <li>Woman</li>
               <li>About</li>

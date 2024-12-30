@@ -1,10 +1,9 @@
 import Image from 'next/image';
-import './styles/landingPage.scss';
+import '../styles/landingPage.scss';
 
 function LandingPage() {
   return (
     <div className="landing-page">
-      {/* Hero Section */}
       <section className="hero">
         <div className="hero-content">
           <h1>Step Into Style</h1>
@@ -25,7 +24,6 @@ function LandingPage() {
         </div>
       </section>
 
-      {/* Featured Products */}
       <section className="featured-products">
         <h2>Featured Sneakers</h2>
         <div className="product-grid">
@@ -65,7 +63,6 @@ function LandingPage() {
         </div>
       </section>
 
-      {/* Testimonials */}
       <section className="testimonials">
         <h2>What Our Customers Say</h2>
         <div className="testimonial-cards">
