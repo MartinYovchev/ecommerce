@@ -32,7 +32,6 @@
     box-shadow 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   background: #ffffff;
   cursor: pointer;
-  padding: auto;
 }
 
 .collection-card:hover {
@@ -66,31 +65,14 @@
   padding: 15px 20px;
   border-radius: 12px;
   transition: background 0.3s ease-in-out;
+
+  h2 {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+  }
 }
 
 .collection-card:hover .collection-info {
-  background: rgba(0, 0, 0, 0.8);
-}
-
-.view-more {
-  display: inline-block;
-  margin-top: 20px;
-  background: linear-gradient(90deg, #ff7e5f, #feb47b);
-  color: #ffffff;
-  padding: 12px 25px;
-  text-decoration: none;
-  font-size: 1.1rem;
-  font-weight: 700;
-  border-radius: 50px;
-  transition:
-    transform 0.3s ease,
-    box-shadow 0.3s ease,
-    background 0.3s ease;
-  box-shadow: 0 4px 15px rgba(255, 126, 95, 0.4);
-}
-
-.view-more:hover {
-  background: linear-gradient(90deg, #ff4e42, #ff7e5f);
-  transform: translateY(-4px) scale(1.05);
-  box-shadow: 0 6px 20px rgba(255, 126, 95, 0.6);
+  background: rgba(0, 0, 0, 0.7);
 }

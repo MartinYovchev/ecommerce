@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import '../styles/landingPage.scss';
+import Link from 'next/link';
 
 function Landing() {
   return (
@@ -11,7 +12,9 @@ function Landing() {
             Discover the latest trends in sneakers. Comfort, fashion, and
             performance combined.
           </p>
-          <button className="cta-button">Shop Now</button>
+          <Link href="/collection">
+            <button className="cta-button">Shop Now</button>
+          </Link>
         </div>
         <div className="hero-image">
           <Image
@@ -37,6 +40,9 @@ function Landing() {
             />
             <h3>Air Max Classic</h3>
             <p>$120</p>
+            <Link href="/collection">
+              <button className="cta-button">Shop Now</button>
+            </Link>
           </div>
           <div className="product-card">
             <Image
@@ -48,6 +54,9 @@ function Landing() {
             />
             <h3>Retro Runner</h3>
             <p>$140</p>
+            <Link href="/collection">
+              <button className="cta-button">Shop Now</button>
+            </Link>
           </div>
           <div className="product-card">
             <Image
@@ -59,6 +68,9 @@ function Landing() {
             />
             <h3>Urban Edge</h3>
             <p>$160</p>
+            <Link href="/collection">
+              <button className="cta-button">Shop Now</button>
+            </Link>
           </div>
         </div>
       </section>

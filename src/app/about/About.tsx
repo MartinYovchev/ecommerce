@@ -37,20 +37,20 @@ function About() {
         <h2>Meet Our Team</h2>
         <div className="team-members">
           <div className="team-member">
-            <img
+            {/* <img
               src="https://via.placeholder.com/150"
               alt="Team Member"
               className="team-photo"
-            />
+            /> */}
             <h3>John Doe</h3>
             <p>Founder & CEO</p>
           </div>
           <div className="team-member">
-            <img
+            {/* <img
               src="https://via.placeholder.com/150"
               alt="Team Member"
               className="team-photo"
-            />
+            /> */}
             <h3>Jane Smith</h3>
             <p>Marketing Director</p>
           </div>
