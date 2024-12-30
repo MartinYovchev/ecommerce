@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import '../styles/landingPage.scss';
 
-function LandingPage() {
+function Landing() {
   return (
     <div className="landing-page">
       <section className="hero">
@@ -85,4 +85,4 @@ function LandingPage() {
     </div>
   );
 }
-export default LandingPage;
+export default Landing;

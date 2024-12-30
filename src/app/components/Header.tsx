@@ -1,13 +1,26 @@
+'use client';
+
 import Link from 'next/link';
 import '../styles/header.scss';
 import Image from 'next/image';
 
 function Header() {
+  const scrollToFooter = () => {
+    const footer = document.getElementById('footer');
+    if (footer) {
+      footer.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <>
       <div className="header-wrapper">
         <div className="nav-wrapper">
-          <div className="head-name">SNEAKERS</div>
+          <div className="head-name">
+            <Link href="/landing" passHref legacyBehavior>
+              <a style={{ all: 'unset' }}>SNEAKERS</a>
+            </Link>
+          </div>
           <div className="header-navigation">
             <ul>
               <li>
@@ -17,8 +30,20 @@ function Header() {
               </li>
               <li>Men</li>
               <li>Woman</li>
-              <li>About</li>
-              <li>Contact</li>
+              <li>
+                <Link href="/about" passHref legacyBehavior>
+                  <a style={{ all: 'unset' }}>About</a>
+                </Link>
+              </li>
+              <li>
+                <button
+                  style={{ all: 'unset' }}
+                  onClick={scrollToFooter}
+                  className="scroll-to-footer-btn"
+                >
+                  Contact
+                </button>
+              </li>
             </ul>
           </div>
         </div>
