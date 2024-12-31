@@ -28,8 +28,16 @@ function Header() {
                   <a style={{ all: 'unset' }}>Collections</a>
                 </Link>
               </li>
-              <li>Men</li>
-              <li>Woman</li>
+              <li>
+                <Link href="/collection/men" passHref legacyBehavior>
+                  <a style={{ all: 'unset' }}>Men</a>
+                </Link>
+              </li>
+              <li>
+                <Link href="/collection/women" passHref legacyBehavior>
+                  <a style={{ all: 'unset' }}>Women</a>
+                </Link>
+              </li>
               <li>
                 <Link href="/about" passHref legacyBehavior>
                   <a style={{ all: 'unset' }}>About</a>

@@ -32,7 +32,7 @@ function Landing() {
         <div className="product-grid">
           <div className="product-card">
             <Image
-              src="/sneaker1.jpg"
+              src="/images_website/sneaker1.jpg"
               alt="Sneaker 1"
               width={200}
               height={200}
@@ -46,7 +46,7 @@ function Landing() {
           </div>
           <div className="product-card">
             <Image
-              src="/sneaker2.jpg"
+              src="/images_website/sneaker2.jpg"
               alt="Sneaker 2"
               width={200}
               height={200}
@@ -60,7 +60,7 @@ function Landing() {
           </div>
           <div className="product-card">
             <Image
-              src="/sneaker3.jpg"
+              src="/images_website/sneaker3.jpg"
               alt="Sneaker 3"
               width={200}
               height={200}

@@ -7,16 +7,26 @@ const collections = [
   {
     id: 1,
     name: 'Sneakers',
-    image: '/sneakers.jpg',
-    link: '/collections/sneakers',
+    image: '/images_website/sneakers.jpg',
+    link: '/collection/sneakers',
   },
-  { id: 2, name: 'Men', image: '/men.jpg', link: '/collections/men' },
-  { id: 3, name: 'Women', image: '/women.jpg', link: '/collections/women' },
+  {
+    id: 2,
+    name: 'Men',
+    image: '/images_website/men.jpg',
+    link: '/collection/men',
+  },
+  {
+    id: 3,
+    name: 'Women',
+    image: '/images_website/women.jpg',
+    link: '/collection/women',
+  },
   {
     id: 4,
     name: 'Accessories',
-    image: '/accessories.jpg',
-    link: '/collections/accessories',
+    image: '/images_website/accessories.jpg',
+    link: '/collection/accessories',
   },
 ];
 
