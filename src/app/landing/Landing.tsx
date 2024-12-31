@@ -1,8 +1,63 @@
+'use client';
+
 import Image from 'next/image';
 import '../styles/landingPage.scss';
 import Link from 'next/link';
+import { useEffect, useState } from 'react';
+
+type ProductImageType = {
+  url: string;
+  alt: string;
+  size: {
+    width: string;
+    height: string;
+  };
+};
+
+type ProductType = {
+  id: string;
+  name: string;
+  info: string;
+  price: string;
+  type: string;
+  image: ProductImageType;
+};
+
+type ProductDataType = {
+  items: ProductType[];
+};
+
+const shuffleArray = (array: ProductType[]): ProductType[] => {
+  const shuffled = [...array];
+  for (let i = shuffled.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+  }
+  return shuffled;
+};
 
 function Landing() {
+  const [products, setProducts] = useState<ProductType[]>([]);
+
+  useEffect(() => {
+    const fetchProducts = async () => {
+      try {
+        const response = await fetch('/data/data.json');
+        if (!response.ok) {
+          throw new Error('Failed to fetch products');
+        }
+        const data: ProductDataType = await response.json();
+        setProducts(data.items);
+      } catch (error) {
+        console.error('Error fetching products:', error);
+      }
+    };
+
+    fetchProducts();
+  }, []);
+
+  const randomProducts = shuffleArray(products).slice(0, 3);
+
   return (
     <div className="landing-page">
       <section className="hero">
@@ -18,7 +73,7 @@ function Landing() {
         </div>
         <div className="hero-image">
           <Image
-            src="/image-first.jpg"
+            src="/images_website/image-first.jpg"
             alt="Sneakers"
             width={600}
             height={600}
@@ -30,48 +85,22 @@ function Landing() {
       <section className="featured-products">
         <h2>Featured Sneakers</h2>
         <div className="product-grid">
-          <div className="product-card">
-            <Image
-              src="/images_website/sneaker1.jpg"
-              alt="Sneaker 1"
-              width={200}
-              height={200}
-              className="product-display-images"
-            />
-            <h3>Air Max Classic</h3>
-            <p>$120</p>
-            <Link href="/collection">
-              <button className="cta-button">Shop Now</button>
-            </Link>
-          </div>
-          <div className="product-card">
-            <Image
-              src="/images_website/sneaker2.jpg"
-              alt="Sneaker 2"
-              width={200}
-              height={200}
-              className="product-display-images"
-            />
-            <h3>Retro Runner</h3>
-            <p>$140</p>
-            <Link href="/collection">
-              <button className="cta-button">Shop Now</button>
-            </Link>
-          </div>
-          <div className="product-card">
-            <Image
-              src="/images_website/sneaker3.jpg"
-              alt="Sneaker 3"
-              width={200}
-              height={200}
-              className="product-display-images"
-            />
-            <h3>Urban Edge</h3>
-            <p>$160</p>
-            <Link href="/collection">
-              <button className="cta-button">Shop Now</button>
-            </Link>
-          </div>
+          {randomProducts.slice(0, 3).map((product) => (
+            <div key={product.id} className="product-card">
+              <Image
+                src={product.image.url}
+                alt={product.image.alt}
+                width={200}
+                height={200}
+                className="product-display-images"
+              />
+              <h3>{product.name}</h3>
+              <p>${product.price}</p>
+              <Link href="/collection">
+                <button className="cta-button">Shop Now</button>
+              </Link>
+            </div>
+          ))}
         </div>
       </section>
 

@@ -31,7 +31,7 @@ function Footer() {
               rel="noopener noreferrer"
             >
               <Image
-                src="/facebook-icon.png"
+                src="/images_website/facebook-icon.png"
                 alt="Facebook"
                 width={50}
                 height={50}
@@ -43,7 +43,7 @@ function Footer() {
               rel="noopener noreferrer"
             >
               <Image
-                src="/twitter-icon.png"
+                src="/images_website/twitter-icon.png"
                 alt="Twitter"
                 width={50}
                 height={50}
@@ -55,7 +55,7 @@ function Footer() {
               rel="noopener noreferrer"
             >
               <Image
-                src="/instagram-icon.png"
+                src="/images_website/instagram-icon.png"
                 alt="Instagram"
                 width={50}
                 height={50}

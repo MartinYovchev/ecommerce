@@ -62,21 +62,19 @@ function Accessories() {
       <h1>Accessories Collections</h1>
       <div className="product-grid">
         {accessories.map((accessory) => (
-          <div key={accessory.id} className="product-card-wrapper">
-            <div className="product-card">
-              <Image
-                src={accessory.image.url || '/placeholder-image.jpg'}
-                alt={accessory.image.alt || 'Accessory Image'}
-                width={parseInt(accessory.image.size.width)}
-                height={parseInt(accessory.image.size.height)}
-                className="product-image"
-              />
-              <div className="product-info">
-                <h2>{accessory.name}</h2>
-                <p className="price">{accessory.formattedPrice}</p>
-              </div>
+          <div key={accessory.id} className="product-card">
+            <Image
+              src={accessory.image.url || '/placeholder-image.jpg'}
+              alt={accessory.image.alt || 'Accessory Image'}
+              width={parseInt(accessory.image.size.width)}
+              height={parseInt(accessory.image.size.height)}
+              className="product-image"
+            />
+            <div className="product-info">
+              <h2>{accessory.name}</h2>
+              <p className="price">{accessory.formattedPrice}</p>
             </div>
-            <Link href={`/accessory/${accessory.id}`}>
+            <Link href={`/accessories/${accessory.id}`}>
               <button className="cta-button">Buy Now</button>
             </Link>
           </div>

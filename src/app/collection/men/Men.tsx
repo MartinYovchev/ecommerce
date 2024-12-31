@@ -62,19 +62,17 @@ function Men() {
       <h1>Mens Collections</h1>
       <div className="product-grid">
         {menSneakers.map((sneaker) => (
-          <div key={sneaker.id} className="product-card-wrapper">
-            <div className="product-card">
-              <Image
-                src={sneaker.image.url || '/placeholder-image.jpg'}
-                alt={sneaker.image.alt || 'Men Sneaker Image'}
-                width={parseInt(sneaker.image.size.width)}
-                height={parseInt(sneaker.image.size.height)}
-                className="product-image"
-              />
-              <div className="product-info">
-                <h2>{sneaker.name}</h2>
-                <p className="price">{sneaker.formattedPrice}</p>
-              </div>
+          <div key={sneaker.id} className="product-card">
+            <Image
+              src={sneaker.image.url || '/placeholder-image.jpg'}
+              alt={sneaker.image.alt || 'Men Sneaker Image'}
+              width={parseInt(sneaker.image.size.width)}
+              height={parseInt(sneaker.image.size.height)}
+              className="product-image"
+            />
+            <div className="product-info">
+              <h2>{sneaker.name}</h2>
+              <p className="price">{sneaker.formattedPrice}</p>
             </div>
             <Link href={`/men/${sneaker.id}`}>
               <button className="cta-button">Buy Now</button>

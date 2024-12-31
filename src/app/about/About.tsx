@@ -1,13 +1,14 @@
+import Image from 'next/image';
 import '../styles/about.scss';
 
 function About() {
   return (
     <div className="about-container">
-      <header className="about-header">
+      <div className="about-header">
         <h1>About Us</h1>
         <p>We bring the best sneakers to your doorsteps.</p>
         <p className="tagline">Quality, Style, Performance</p>
-      </header>
+      </div>
 
       <section className="about-description">
         <h2>Our Story</h2>
@@ -37,20 +38,24 @@ function About() {
         <h2>Meet Our Team</h2>
         <div className="team-members">
           <div className="team-member">
-            {/* <img
-              src="https://via.placeholder.com/150"
+            <Image
+              src="/images_website/p1.jpg"
               alt="Team Member"
               className="team-photo"
-            /> */}
+              width={100}
+              height={100}
+            />
             <h3>John Doe</h3>
             <p>Founder & CEO</p>
           </div>
           <div className="team-member">
-            {/* <img
-              src="https://via.placeholder.com/150"
+            <Image
+              src="/images_website/p2.jpg"
               alt="Team Member"
               className="team-photo"
-            /> */}
+              width={100}
+              height={100}
+            />
             <h3>Jane Smith</h3>
             <p>Marketing Director</p>
           </div>

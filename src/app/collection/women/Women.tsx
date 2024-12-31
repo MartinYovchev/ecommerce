@@ -62,21 +62,19 @@ function Women() {
       <h1>Women Sneakers Collections</h1>
       <div className="product-grid">
         {womenSneakers.map((womenSneakers) => (
-          <div key={womenSneakers.id} className="product-card-wrapper">
-            <div className="product-card">
-              <Image
-                src={womenSneakers.image.url || '/placeholder-image.jpg'}
-                alt={womenSneakers.image.alt || 'Women Sneakers Image'}
-                width={parseInt(womenSneakers.image.size.width)}
-                height={parseInt(womenSneakers.image.size.height)}
-                className="product-image"
-              />
-              <div className="product-info">
-                <h2>{womenSneakers.name}</h2>
-                <p className="price">{womenSneakers.formattedPrice}</p>
-              </div>
+          <div key={womenSneakers.id} className="product-card">
+            <Image
+              src={womenSneakers.image.url || '/placeholder-image.jpg'}
+              alt={womenSneakers.image.alt || 'Women Sneakers Image'}
+              width={parseInt(womenSneakers.image.size.width)}
+              height={parseInt(womenSneakers.image.size.height)}
+              className="product-image"
+            />
+            <div className="product-info">
+              <h2>{womenSneakers.name}</h2>
+              <p className="price">{womenSneakers.formattedPrice}</p>
             </div>
-            <Link href={`/men/${womenSneakers.id}`}>
+            <Link href={`/women/${womenSneakers.id}`}>
               <button className="cta-button">Buy Now</button>
             </Link>
           </div>

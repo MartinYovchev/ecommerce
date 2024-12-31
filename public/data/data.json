@@ -7,11 +7,11 @@
       "type": "men",
       "price": "170",
       "image": {
-        "url": "/images_website/men1.jpg",
+        "url": "/images_website/NAJ1.jpg",
         "alt": "Nike Air Jordan 1 Retro OG",
         "size": {
-          "width": "500",
-          "height": "500"
+          "width": "300",
+          "height": "300"
         }
       }
     },
@@ -22,11 +22,11 @@
       "type": "men",
       "price": "220",
       "image": {
-        "url": "/images_website/men1.jpg",
+        "url": "/images_website/Yezze1.jpg",
         "alt": "Adidas Yeezy Boost 350 V2",
         "size": {
-          "width": "500",
-          "height": "500"
+          "width": "300",
+          "height": "300"
         }
       }
     },
@@ -37,11 +37,11 @@
       "type": "women",
       "price": "180",
       "image": {
-        "url": "/images_website/men1.jpg",
+        "url": "/images_website/1.jpg",
         "alt": "Nike Air Max 97 OG",
         "size": {
-          "width": "500",
-          "height": "500"
+          "width": "300",
+          "height": "300"
         }
       }
     },
@@ -52,11 +52,11 @@
       "type": "men",
       "price": "120",
       "image": {
-        "url": "/images_website/men1.jpg",
+        "url": "/images_website/2.jpg",
         "alt": "Puma Clyde Court",
         "size": {
-          "width": "500",
-          "height": "500"
+          "width": "300",
+          "height": "300"
         }
       }
     },
@@ -67,11 +67,11 @@
       "type": "men",
       "price": "175",
       "image": {
-        "url": "/images_website/men1.jpg",
+        "url": "/images_website/3.jpg",
         "alt": "New Balance 990v5",
         "size": {
-          "width": "500",
-          "height": "500"
+          "width": "300",
+          "height": "300"
         }
       }
     },
@@ -85,8 +85,8 @@
         "url": "/images_website/men1.jpg",
         "alt": "Nike Air Max 270 React",
         "size": {
-          "width": "500",
-          "height": "500"
+          "width": "300",
+          "height": "300"
         }
       }
     },
@@ -100,8 +100,8 @@
         "url": "/images_website/men1.jpg",
         "alt": "Adidas Ultra Boost 22",
         "size": {
-          "width": "500",
-          "height": "500"
+          "width": "300",
+          "height": "300"
         }
       }
     },
@@ -112,11 +112,11 @@
       "type": "men",
       "price": "200",
       "image": {
-        "url": "/images_website/men1.jpg",
+        "url": "/images_website/4.jpg",
         "alt": "Nike Air VaporMax Plus",
         "size": {
-          "width": "500",
-          "height": "500"
+          "width": "300",
+          "height": "300"
         }
       }
     },
@@ -127,11 +127,11 @@
       "type": "men",
       "price": "130",
       "image": {
-        "url": "/images_website/men1.jpg",
+        "url": "/images_website/5.jpg",
         "alt": "Under Armour Curry One",
         "size": {
-          "width": "500",
-          "height": "500"
+          "width": "300",
+          "height": "300"
         }
       }
     },
@@ -142,11 +142,11 @@
       "type": "accessories",
       "price": "250",
       "image": {
-        "url": "/fendi1.jpg",
+        "url": "/images_website/fendi1.jpg",
         "alt": "Fendi Logo Slides",
         "size": {
-          "width": "500",
-          "height": "500"
+          "width": "300",
+          "height": "300"
         }
       }
     },
@@ -157,11 +157,11 @@
       "type": "accessories",
       "price": "650",
       "image": {
-        "url": "/gucci1.jpg",
+        "url": "/images_website/gucci1.jpg",
         "alt": "Gucci GG Supreme Belt Bag",
         "size": {
-          "width": "500",
-          "height": "500"
+          "width": "300",
+          "height": "300"
         }
       }
     },
@@ -172,11 +172,11 @@
       "type": "accessories",
       "price": "150",
       "image": {
-        "url": "/glass1.jpg",
+        "url": "/images_website/glass1.jpg",
         "alt": "Ray-Ban Wayfarer Sunglasses",
         "size": {
-          "width": "500",
-          "height": "500"
+          "width": "300",
+          "height": "300"
         }
       }
     },
@@ -187,11 +187,11 @@
       "type": "men",
       "price": "60",
       "image": {
-        "url": "/images_website/men1.jpg",
+        "url": "/images_website/6.jpg",
         "alt": "Vans Old Skool Classic",
         "size": {
-          "width": "500",
-          "height": "500"
+          "width": "300",
+          "height": "300"
         }
       }
     },
@@ -202,11 +202,11 @@
       "type": "women",
       "price": "85",
       "image": {
-        "url": "/images_website/men1.jpg",
+        "url": "/images_website/7.jpg",
         "alt": "Reebok Classic Leather",
         "size": {
-          "width": "500",
-          "height": "500"
+          "width": "300",
+          "height": "300"
         }
       }
     },
@@ -217,11 +217,11 @@
       "type": "men",
       "price": "120",
       "image": {
-        "url": "/images_website/men1.jpg",
+        "url": "/images_website/8.jpg",
         "alt": "Nike Zoom Freak 1",
         "size": {
-          "width": "500",
-          "height": "500"
+          "width": "300",
+          "height": "300"
         }
       }
     },
@@ -232,11 +232,11 @@
       "type": "women",
       "price": "60",
       "image": {
-        "url": "/images_website/men1.jpg",
+        "url": "/images_website/9.jpg",
         "alt": "Converse Chuck Taylor All Star",
         "size": {
-          "width": "500",
-          "height": "500"
+          "width": "300",
+          "height": "300"
         }
       }
     },
@@ -247,11 +247,11 @@
       "type": "men",
       "price": "950",
       "image": {
-        "url": "/images_website/men1.jpg",
+        "url": "/images_website/10.jpg",
         "alt": "Balenciaga Triple S",
         "size": {
-          "width": "500",
-          "height": "500"
+          "width": "300",
+          "height": "300"
         }
       }
     },
@@ -262,11 +262,11 @@
       "type": "women",
       "price": "90",
       "image": {
-        "url": "/images_website/men1.jpg",
+        "url": "/images_website/11.jpg",
         "alt": "Nike Air Force 1",
         "size": {
-          "width": "500",
-          "height": "500"
+          "width": "300",
+          "height": "300"
         }
       }
     }
