@@ -6,14 +6,16 @@
       "info": "The iconic Air Jordan 1 in its original 'Chicago' colorway, featuring a high-top design and premium leather construction.",
       "type": "men",
       "price": "170",
-      "image": {
-        "url": "/images_website/NAJ1.jpg",
-        "alt": "Nike Air Jordan 1 Retro OG",
-        "size": {
-          "width": "300",
-          "height": "300"
+      "images": [
+        {
+          "url": "/images_website/NAJ1.jpg",
+          "alt": "Nike Air Jordan 1 Retro OG",
+          "size": {
+            "width": "300",
+            "height": "300"
+          }
         }
-      }
+      ]
     },
     {
       "id": "2",
@@ -21,14 +23,16 @@
       "info": "The Adidas Yeezy Boost 350 V2, known for its sleek and futuristic design, featuring a knit upper and Boost cushioning.",
       "type": "men",
       "price": "220",
-      "image": {
-        "url": "/images_website/Yezze1.jpg",
-        "alt": "Adidas Yeezy Boost 350 V2",
-        "size": {
-          "width": "300",
-          "height": "300"
+      "images": [
+        {
+          "url": "/images_website/Yezze1.jpg",
+          "alt": "Adidas Yeezy Boost 350 V2",
+          "size": {
+            "width": "300",
+            "height": "300"
+          }
         }
-      }
+      ]
     },
     {
       "id": "3",
@@ -36,14 +40,16 @@
       "info": "The Air Max 97 OG, a retro running sneaker with reflective silver and red accents, known for its sleek design and visible Air cushioning.",
       "type": "women",
       "price": "180",
-      "image": {
-        "url": "/images_website/1.jpg",
-        "alt": "Nike Air Max 97 OG",
-        "size": {
-          "width": "300",
-          "height": "300"
+      "images": [
+        {
+          "url": "/images_website/1.jpg",
+          "alt": "Nike Air Max 97 OG",
+          "size": {
+            "width": "300",
+            "height": "300"
+          }
         }
-      }
+      ]
     },
     {
       "id": "4",
@@ -51,14 +57,16 @@
       "info": "The Puma Clyde Court, a modern basketball sneaker with performance features and a stylish design, featuring a knit upper and responsive cushioning.",
       "type": "men",
       "price": "120",
-      "image": {
-        "url": "/images_website/2.jpg",
-        "alt": "Puma Clyde Court",
-        "size": {
-          "width": "300",
-          "height": "300"
+      "images": [
+        {
+          "url": "/images_website/2.jpg",
+          "alt": "Puma Clyde Court",
+          "size": {
+            "width": "300",
+            "height": "300"
+          }
         }
-      }
+      ]
     },
     {
       "id": "5",
@@ -66,14 +74,16 @@
       "info": "The New Balance 990v5, known for its classic American style, premium suede/mesh upper, and cushioned midsole, perfect for casual wear or running.",
       "type": "men",
       "price": "175",
-      "image": {
-        "url": "/images_website/3.jpg",
-        "alt": "New Balance 990v5",
-        "size": {
-          "width": "300",
-          "height": "300"
+      "images": [
+        {
+          "url": "/images_website/3.jpg",
+          "alt": "New Balance 990v5",
+          "size": {
+            "width": "300",
+            "height": "300"
+          }
         }
-      }
+      ]
     },
     {
       "id": "6",
@@ -81,14 +91,16 @@
       "info": "The Nike Air Max 270 React combines the iconic Air Max cushioning with modern React foam for ultimate comfort and style.",
       "type": "women",
       "price": "150",
-      "image": {
-        "url": "/images_website/men1.jpg",
-        "alt": "Nike Air Max 270 React",
-        "size": {
-          "width": "300",
-          "height": "300"
+      "images": [
+        {
+          "url": "/images_website/men1.jpg",
+          "alt": "Nike Air Max 270 React",
+          "size": {
+            "width": "300",
+            "height": "300"
+          }
         }
-      }
+      ]
     },
     {
       "id": "7",
@@ -96,14 +108,16 @@
       "info": "The Adidas Ultra Boost 22 delivers next-level comfort with its full-length Boost midsole, engineered mesh upper, and responsive cushioning.",
       "type": "women",
       "price": "180",
-      "image": {
-        "url": "/images_website/men1.jpg",
-        "alt": "Adidas Ultra Boost 22",
-        "size": {
-          "width": "300",
-          "height": "300"
+      "images": [
+        {
+          "url": "/images_website/men1.jpg",
+          "alt": "Adidas Ultra Boost 22",
+          "size": {
+            "width": "300",
+            "height": "300"
+          }
         }
-      }
+      ]
     },
     {
       "id": "8",
@@ -111,14 +125,16 @@
       "info": "The Nike Air VaporMax Plus features futuristic design lines and a unique Air cushioning system for exceptional comfort.",
       "type": "men",
       "price": "200",
-      "image": {
-        "url": "/images_website/4.jpg",
-        "alt": "Nike Air VaporMax Plus",
-        "size": {
-          "width": "300",
-          "height": "300"
+      "images": [
+        {
+          "url": "/images_website/4.jpg",
+          "alt": "Nike Air VaporMax Plus",
+          "size": {
+            "width": "300",
+            "height": "300"
+          }
         }
-      }
+      ]
     },
     {
       "id": "9",
@@ -126,14 +142,16 @@
       "info": "The Under Armour Curry One basketball sneaker is built for performance, featuring a lightweight design and responsive cushioning for quick movements.",
       "type": "men",
       "price": "130",
-      "image": {
-        "url": "/images_website/5.jpg",
-        "alt": "Under Armour Curry One",
-        "size": {
-          "width": "300",
-          "height": "300"
+      "images": [
+        {
+          "url": "/images_website/5.jpg",
+          "alt": "Under Armour Curry One",
+          "size": {
+            "width": "300",
+            "height": "300"
+          }
         }
-      }
+      ]
     },
     {
       "id": "10",
@@ -141,14 +159,16 @@
       "info": "Fendi logo slides with a bold design, perfect for casual wear during the summer. Featuring a comfortable, slip-on style with logo branding.",
       "type": "accessories",
       "price": "250",
-      "image": {
-        "url": "/images_website/fendi1.jpg",
-        "alt": "Fendi Logo Slides",
-        "size": {
-          "width": "300",
-          "height": "300"
+      "images": [
+        {
+          "url": "/images_website/fendi1.jpg",
+          "alt": "Fendi Logo Slides",
+          "size": {
+            "width": "300",
+            "height": "300"
+          }
         }
-      }
+      ]
     },
     {
       "id": "11",
@@ -156,14 +176,16 @@
       "info": "Gucci GG Supreme Belt Bag crafted from the iconic GG canvas, featuring a zip closure and adjustable strap. A stylish accessory for any outfit.",
       "type": "accessories",
       "price": "650",
-      "image": {
-        "url": "/images_website/gucci1.jpg",
-        "alt": "Gucci GG Supreme Belt Bag",
-        "size": {
-          "width": "300",
-          "height": "300"
+      "images": [
+        {
+          "url": "/images_website/gucci1.jpg",
+          "alt": "Gucci GG Supreme Belt Bag",
+          "size": {
+            "width": "300",
+            "height": "300"
+          }
         }
-      }
+      ]
     },
     {
       "id": "12",
@@ -171,14 +193,16 @@
       "info": "Ray-Ban Wayfarer sunglasses, a timeless accessory for any season, featuring durable plastic frames and high-quality lenses.",
       "type": "accessories",
       "price": "150",
-      "image": {
-        "url": "/images_website/glass1.jpg",
-        "alt": "Ray-Ban Wayfarer Sunglasses",
-        "size": {
-          "width": "300",
-          "height": "300"
+      "images": [
+        {
+          "url": "/images_website/glass1.jpg",
+          "alt": "Ray-Ban Wayfarer Sunglasses",
+          "size": {
+            "width": "300",
+            "height": "300"
+          }
         }
-      }
+      ]
     },
     {
       "id": "13",
@@ -186,14 +210,16 @@
       "info": "Vans Old Skool Classic, with its iconic side stripe and durable canvas construction, perfect for skateboarding and casual wear.",
       "type": "men",
       "price": "60",
-      "image": {
-        "url": "/images_website/6.jpg",
-        "alt": "Vans Old Skool Classic",
-        "size": {
-          "width": "300",
-          "height": "300"
+      "images": [
+        {
+          "url": "/images_website/6.jpg",
+          "alt": "Vans Old Skool Classic",
+          "size": {
+            "width": "300",
+            "height": "300"
+          }
         }
-      }
+      ]
     },
     {
       "id": "14",
@@ -201,14 +227,16 @@
       "info": "The Reebok Classic Leather sneaker combines comfort and style with a leather upper and EVA midsole, offering a clean, retro design.",
       "type": "women",
       "price": "85",
-      "image": {
-        "url": "/images_website/7.jpg",
-        "alt": "Reebok Classic Leather",
-        "size": {
-          "width": "300",
-          "height": "300"
+      "images": [
+        {
+          "url": "/images_website/7.jpg",
+          "alt": "Reebok Classic Leather",
+          "size": {
+            "width": "300",
+            "height": "300"
+          }
         }
-      }
+      ]
     },
     {
       "id": "15",
@@ -216,14 +244,16 @@
       "info": "The Nike Zoom Freak 1, designed for Giannis Antetokounmpo, featuring responsive Zoom Air cushioning and a lightweight mesh upper.",
       "type": "men",
       "price": "120",
-      "image": {
-        "url": "/images_website/8.jpg",
-        "alt": "Nike Zoom Freak 1",
-        "size": {
-          "width": "300",
-          "height": "300"
+      "images": [
+        {
+          "url": "/images_website/8.jpg",
+          "alt": "Nike Zoom Freak 1",
+          "size": {
+            "width": "300",
+            "height": "300"
+          }
         }
-      }
+      ]
     },
     {
       "id": "16",
@@ -231,14 +261,16 @@
       "info": "The Converse Chuck Taylor All Star, an all-time classic, featuring a canvas upper, rubber sole, and a timeless silhouette.",
       "type": "women",
       "price": "60",
-      "image": {
-        "url": "/images_website/9.jpg",
-        "alt": "Converse Chuck Taylor All Star",
-        "size": {
-          "width": "300",
-          "height": "300"
+      "images": [
+        {
+          "url": "/images_website/9.jpg",
+          "alt": "Converse Chuck Taylor All Star",
+          "size": {
+            "width": "300",
+            "height": "300"
+          }
         }
-      }
+      ]
     },
     {
       "id": "17",
@@ -246,14 +278,24 @@
       "info": "The Balenciaga Triple S is a luxury sneaker with a chunky silhouette and multi-layered sole, blending high-fashion with streetwear.",
       "type": "men",
       "price": "950",
-      "image": {
-        "url": "/images_website/10.jpg",
-        "alt": "Balenciaga Triple S",
-        "size": {
-          "width": "300",
-          "height": "300"
+      "images": [
+        {
+          "url": "/images_website/10.jpg",
+          "alt": "Balenciaga Triple S",
+          "size": {
+            "width": "300",
+            "height": "300"
+          }
+        },
+        {
+          "url": "/images_website/20.jpg",
+          "alt": "Balenciaga Triple S",
+          "size": {
+            "width": "300",
+            "height": "300"
+          }
         }
-      }
+      ]
     },
     {
       "id": "18",
@@ -261,14 +303,16 @@
       "info": "The Nike Air Force 1 is a versatile classic sneaker, known for its clean white leather upper and cushioned sole for all-day comfort.",
       "type": "women",
       "price": "90",
-      "image": {
-        "url": "/images_website/11.jpg",
-        "alt": "Nike Air Force 1",
-        "size": {
-          "width": "300",
-          "height": "300"
+      "images": [
+        {
+          "url": "/images_website/11.jpg",
+          "alt": "Nike Air Force 1",
+          "size": {
+            "width": "300",
+            "height": "300"
+          }
         }
-      }
+      ]
     }
   ]
 }

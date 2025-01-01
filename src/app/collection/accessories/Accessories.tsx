@@ -21,7 +21,7 @@ type AccessoriesType = {
   price: string;
   formattedPrice?: string;
   type: string;
-  image: AccessoriesImageType;
+  images: AccessoriesImageType[];
 };
 
 function Accessories() {
@@ -64,17 +64,17 @@ function Accessories() {
         {accessories.map((accessory) => (
           <div key={accessory.id} className="product-card">
             <Image
-              src={accessory.image.url || '/placeholder-image.jpg'}
-              alt={accessory.image.alt || 'Accessory Image'}
-              width={parseInt(accessory.image.size.width)}
-              height={parseInt(accessory.image.size.height)}
+              src={accessory.images[0].url || '/placeholder-image.jpg'}
+              alt={accessory.images[0].alt || 'Accessory Image'}
+              width={parseInt(accessory.images[0].size.width)}
+              height={parseInt(accessory.images[0].size.height)}
               className="product-image"
             />
             <div className="product-info">
               <h2>{accessory.name}</h2>
               <p className="price">{accessory.formattedPrice}</p>
             </div>
-            <Link href={`/accessories/${accessory.id}`}>
+            <Link href={`/collection/${accessory.id}`}>
               <button className="cta-button">Buy Now</button>
             </Link>
           </div>

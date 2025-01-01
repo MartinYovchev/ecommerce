@@ -1,7 +1,7 @@
 'use client';
 
 import Image from 'next/image';
-import '../styles/landingPage.scss';
+import '../styles/landing-page.scss';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
 

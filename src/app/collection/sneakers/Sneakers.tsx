@@ -21,7 +21,7 @@ type SneakersType = {
   price: string;
   formattedPrice?: string;
   type: string;
-  image: SneakersImageType;
+  images: SneakersImageType[];
 };
 
 function Sneakers() {
@@ -64,17 +64,17 @@ function Sneakers() {
         {sneakers.map((sneakers) => (
           <div key={sneakers.id} className="product-card">
             <Image
-              src={sneakers.image.url || '/placeholder-image.jpg'}
-              alt={sneakers.image.alt || 'Men Sneakers Image'}
-              width={parseInt(sneakers.image.size.width)}
-              height={parseInt(sneakers.image.size.height)}
+              src={sneakers.images[0].url || '/placeholder-image.jpg'}
+              alt={sneakers.images[0].alt || 'Men Sneakers Image'}
+              width={parseInt(sneakers.images[0].size.width)}
+              height={parseInt(sneakers.images[0].size.height)}
               className="product-image"
             />
             <div className="product-info">
               <h2>{sneakers.name}</h2>
               <p className="price">{sneakers.formattedPrice}</p>
             </div>
-            <Link href={`/sneakers/${sneakers.id}`}>
+            <Link href={`/collection/${sneakers.id}`}>
               <button className="cta-button">Buy Now</button>
             </Link>
           </div>
