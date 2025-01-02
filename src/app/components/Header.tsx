@@ -57,12 +57,14 @@ function Header() {
         </div>
         <div className="checkout-wrapper">
           <div className="cart-button">
-            <Image
-              src="/images_website/shopping-cart.png"
-              width={40}
-              height={45}
-              alt="Cart"
-            />
+            <Link href="/cart" passHref legacyBehavior>
+              <Image
+                src="/images_website/shopping-cart.png"
+                width={40}
+                height={45}
+                alt="Cart"
+              />
+            </Link>
           </div>
           <div className="account-button">
             <Image

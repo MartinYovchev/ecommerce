@@ -3,6 +3,7 @@
 import { useEffect, useState } from 'react';
 import Image from 'next/image';
 import '../../styles/item-page.scss';
+import { useCart } from '@/app/components/context/CartContext';
 
 type ProductImageType = {
   url: string;
@@ -20,6 +21,7 @@ export type ProductDetailsType = {
   price: number;
   discount: number;
   images: ProductImageType[];
+  quantity: number;
 };
 
 const ProductDetails = ({
@@ -31,6 +33,7 @@ const ProductDetails = ({
   const [selectedImage, setSelectedImage] = useState<ProductImageType | null>(
     null
   );
+  const { addToCart } = useCart();
 
   useEffect(() => {
     if (product?.images && product.images.length > 0) {
@@ -43,7 +46,14 @@ const ProductDetails = ({
   }
 
   const handleAddToCart = () => {
-    // alert(`Added ${quantity} of ${product.name} to the cart.`);
+    if (product) {
+      const productWithQuantity = {
+        ...product,
+        quantity: quantity,
+      };
+
+      addToCart(productWithQuantity, quantity);
+    }
   };
 
   return (

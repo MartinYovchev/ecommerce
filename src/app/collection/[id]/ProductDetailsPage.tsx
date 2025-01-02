@@ -4,6 +4,9 @@ import ProductDetails from './ProductDetails';
 import { useParams } from 'next/navigation';
 import { useEffect, useState } from 'react';
 import { ProductDetailsType } from './ProductDetails';
+import { CartProvider } from '@/app/components/context/CartContext';
+import CartBasket from '@/app/components/context/CartBasket';
+import '../../styles/buying-page.scss';
 
 function ProductDetailsPage() {
   const { id } = useParams();
@@ -32,7 +35,16 @@ function ProductDetailsPage() {
     fetchProduct();
   }, [id]);
 
-  return <ProductDetails product={product} />;
+  return (
+    <CartProvider>
+      <div className="product-and-cart-container">
+        <ProductDetails product={product} />
+        <div className="cart-basket-container">
+          <CartBasket />
+        </div>
+      </div>
+    </CartProvider>
+  );
 }
 
 export default ProductDetailsPage;
