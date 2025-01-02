@@ -1,8 +1,9 @@
 'use client';
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Image from 'next/image';
 import '../../styles/item-page.scss';
+import Loading from '@/app/loading';
 
 type ProductImageType = {
   url: string;
@@ -28,10 +29,18 @@ const ProductDetails = ({
   product: ProductDetailsType | null;
 }) => {
   const [quantity, setQuantity] = useState(1);
-  const [selectedImage, setSelectedImage] = useState(product?.images[0]);
+  const [selectedImage, setSelectedImage] = useState<ProductImageType | null>(
+    null
+  );
 
-  if (!product) {
-    return <div>Loading...</div>;
+  useEffect(() => {
+    if (product?.images && product.images.length > 0) {
+      setSelectedImage(product.images[0]);
+    }
+  }, [product]);
+
+  if (!product?.images || product.images.length === 0) {
+    return <p>No images available for this product.</p>;
   }
 
   const handleAddToCart = () => {
@@ -40,22 +49,26 @@ const ProductDetails = ({
 
   return (
     <div className={'product-details-container'}>
-      <div className={'product-details-imageGallery'}>
-        <div className={'product-details-mainImage'}>
-          {product?.images[0].url && (
+      <div className="product-details-imageGallery">
+        <div className="product-details-mainImage">
+          {selectedImage && (
             <Image
-              src={product.images[0].url}
-              alt={product.images[0].alt}
+              src={selectedImage.url}
+              alt={selectedImage.alt}
               width={500}
               height={500}
+              className="main-product-image"
             />
           )}
         </div>
-        <div className={'product-details-thumbnailGallery'}>
+
+        <div className="product-details-thumbnailGallery">
           {product.images.map((image, index) => (
             <div
               key={index}
-              className={`${'product-details-thumbnail'} ${selectedImage?.url}`}
+              className={`product-details-thumbnail ${
+                selectedImage?.url === image.url ? 'active-thumbnail' : ''
+              }`}
               onClick={() => setSelectedImage(image)}
             >
               <Image src={image.url} alt={image.alt} width={100} height={100} />

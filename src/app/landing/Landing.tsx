@@ -20,7 +20,7 @@ type ProductType = {
   info: string;
   price: string;
   type: string;
-  image: ProductImageType;
+  images: ProductImageType[];
 };
 
 type ProductDataType = {
@@ -88,15 +88,15 @@ function Landing() {
           {randomProducts.slice(0, 3).map((product) => (
             <div key={product.id} className="product-card">
               <Image
-                src={product.image.url}
-                alt={product.image.alt}
+                src={product.images[0].url}
+                alt={product.images[0].alt}
                 width={200}
                 height={200}
                 className="product-display-images"
               />
               <h3>{product.name}</h3>
               <p>${product.price}</p>
-              <Link href="/collection">
+              <Link href={`/collection/${product.id}`}>
                 <button className="cta-button">Shop Now</button>
               </Link>
             </div>
