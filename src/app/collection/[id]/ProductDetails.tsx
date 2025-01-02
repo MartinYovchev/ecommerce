@@ -3,7 +3,6 @@
 import { useEffect, useState } from 'react';
 import Image from 'next/image';
 import '../../styles/item-page.scss';
-import Loading from '@/app/loading';
 
 type ProductImageType = {
   url: string;
