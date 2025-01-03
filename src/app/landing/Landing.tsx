@@ -27,7 +27,7 @@ type ProductDataType = {
   items: ProductType[];
 };
 
-const shuffleArray = (array: ProductType[]): ProductType[] => {
+const shuffleArray = <T,>(array: T[]): T[] => {
   const shuffled = [...array];
   for (let i = shuffled.length - 1; i > 0; i--) {
     const j = Math.floor(Math.random() * (i + 1));
@@ -37,7 +37,10 @@ const shuffleArray = (array: ProductType[]): ProductType[] => {
 };
 
 function Landing() {
-  const [products, setProducts] = useState<ProductType[]>([]);
+  const [heroImages, setHeroImages] = useState<ProductImageType[]>([]);
+  const [featuredProducts, setFeaturedProducts] = useState<ProductType[]>([]);
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [isFading, setIsFading] = useState(false);
 
   useEffect(() => {
     const fetchProducts = async () => {
@@ -47,7 +50,15 @@ function Landing() {
           throw new Error('Failed to fetch products');
         }
         const data: ProductDataType = await response.json();
-        setProducts(data.items);
+
+        // Random hero images
+        const allImages = data.items.flatMap((product) => product.images);
+        const randomHeroImages = shuffleArray(allImages).slice(0, 5);
+        setHeroImages(randomHeroImages);
+
+        // Static featured products
+        const randomFeaturedProducts = shuffleArray(data.items).slice(0, 4);
+        setFeaturedProducts(randomFeaturedProducts);
       } catch (error) {
         console.error('Error fetching products:', error);
       }
@@ -56,7 +67,20 @@ function Landing() {
     fetchProducts();
   }, []);
 
-  const randomProducts = shuffleArray(products).slice(0, 3);
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setIsFading(true);
+
+      setTimeout(() => {
+        setCurrentImageIndex(
+          (prevIndex) => (prevIndex + 1) % heroImages.length
+        );
+        setIsFading(false);
+      }, 1500);
+    }, 4000);
+
+    return () => clearInterval(interval);
+  }, [heroImages.length]);
 
   return (
     <div className="landing-page">
@@ -72,20 +96,27 @@ function Landing() {
           </Link>
         </div>
         <div className="hero-image">
-          <Image
-            src="/images_website/image-first.jpg"
-            alt="Sneakers"
-            width={600}
-            height={600}
-            className="image-product"
-          />
+          {heroImages.length > 0 && (
+            <div
+              className={`fade-image ${isFading ? 'fade-out' : 'fade-in'}`}
+              key={currentImageIndex}
+            >
+              <Image
+                src={heroImages[currentImageIndex].url}
+                alt={heroImages[currentImageIndex].alt}
+                width={600}
+                height={600}
+                className="image-product"
+              />
+            </div>
+          )}
         </div>
       </section>
 
       <section className="featured-products">
         <h2>Featured Sneakers</h2>
         <div className="product-grid">
-          {randomProducts.slice(0, 3).map((product) => (
+          {featuredProducts.map((product) => (
             <div key={product.id} className="product-card">
               <Image
                 src={product.images[0].url}
@@ -126,4 +157,5 @@ function Landing() {
     </div>
   );
 }
+
 export default Landing;

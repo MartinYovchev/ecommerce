@@ -1,0 +1,39 @@
+$primary-color: #f8f8f8;
+$secondary-color: orange;
+$text-color: #f8f8f8;
+
+.loading-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(135deg, $primary-color, $secondary-color);
+  color: $text-color;
+  font-family: 'Arial, sans-serif';
+  text-align: center;
+
+  .spinner {
+    width: 60px;
+    height: 60px;
+    border: 6px solid $text-color;
+    border-top: 6px solid $secondary-color;
+    border-radius: 50%;
+    animation: spin 1.2s linear infinite;
+  }
+
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+  .loading-text {
+    margin-top: 20px;
+    font-size: 1.2rem;
+    font-weight: 500;
+  }
+}

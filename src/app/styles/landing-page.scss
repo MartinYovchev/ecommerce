@@ -10,8 +10,31 @@
     background-color: #f8f8f8;
     padding: 50px;
 
+    .hero-image {
+      width: 615px;
+      height: 615px;
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      overflow: hidden;
+
+      .fade-image {
+        opacity: 1;
+        transition: opacity 1.5s ease-in-out;
+      }
+
+      .fade-in {
+        opacity: 1;
+      }
+
+      .fade-out {
+        opacity: 0;
+      }
+    }
+
     .hero-content {
       max-width: 50%;
+      padding-left: 100px;
       h1 {
         font-size: 3rem;
         margin-bottom: 20px;
@@ -35,11 +58,6 @@
           background-color: #ff4520;
         }
       }
-    }
-    .hero-image {
-      flex: 1;
-      display: flex;
-      justify-content: center;
     }
     .image-product {
       border-radius: 30px;
