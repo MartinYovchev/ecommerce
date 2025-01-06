@@ -3,13 +3,10 @@
 import { useCart } from '../../context/CartContext';
 import Image from 'next/image';
 import '@styles/cart.scss';
+import Link from 'next/link';
 
 const CartBasket = () => {
-  const { cart, removeFromCart, updateQuantity } = useCart();
-  const totalPrice = cart.reduce(
-    (sum, item) => sum + item.price * (item.quantity || 1),
-    0
-  );
+  const { cart, removeFromCart, updateQuantity, totalPrice } = useCart();
 
   return (
     <div className="cart-basket-wrapper">
@@ -58,7 +55,9 @@ const CartBasket = () => {
             <h3>Total:</h3>
             <p>${totalPrice.toFixed(2)}</p>
           </div>
-          <button className="checkout-btn">Checkout</button>
+          <Link href="/checkout">
+            <button className="checkout-btn">Checkout</button>
+          </Link>
         </div>
       ) : (
         <p>Your cart is empty.</p>

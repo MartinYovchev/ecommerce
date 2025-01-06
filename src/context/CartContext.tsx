@@ -7,6 +7,7 @@ import React, {
   useContext,
   useEffect,
   ReactNode,
+  useMemo,
 } from 'react';
 
 type CartContextType = {
@@ -14,6 +15,7 @@ type CartContextType = {
   addToCart: (product: ProductDetailsType, quantity: number) => void;
   removeFromCart: (id: string) => void;
   updateQuantity: (id: string, quantity: number) => void;
+  totalPrice: number;
 };
 
 type CartProviderProps = {
@@ -59,21 +61,29 @@ export const CartProvider: React.FC<CartProviderProps> = ({ children }) => {
   };
 
   const updateQuantity = (id: string, quantity: number) => {
-    setCart(
-      cart.map((item) => (item.id === id ? { ...item, quantity } : item))
+    setCart((prev) =>
+      prev.map((item) =>
+        item.id === id ? { ...item, quantity: Math.max(quantity, 1) } : item
+      )
     );
   };
 
+  const totalPrice = useMemo(() => {
+    return cart.reduce(
+      (sum, item) => sum + item.price * (item.quantity || 1),
+      0
+    );
+  }, [cart]);
+
   return (
     <CartContext.Provider
-      value={{ cart, addToCart, removeFromCart, updateQuantity }}
+      value={{ cart, addToCart, removeFromCart, updateQuantity, totalPrice }}
     >
       {children}
     </CartContext.Provider>
   );
 };
 
-// Custom hook to use the CartContext
 export const useCart = (): CartContextType => {
   const context = useContext(CartContext);
   if (!context) {

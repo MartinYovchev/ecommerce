@@ -23,7 +23,8 @@
       "@styles/*": ["./src/styles/*"],
       "@components/*": ["./src/components/*"],
       "@context/*": ["./src/context/*"],
-      "@collection/*": ["./src/collection/*"]
+      "@collection/*": ["./src/collection/*"],
+      "@lib/*": ["./src/lib/*"]
     }
   },
   "include": [
