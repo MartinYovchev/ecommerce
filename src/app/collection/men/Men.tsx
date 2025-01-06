@@ -3,7 +3,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { useState, useEffect } from 'react';
-import '../../styles/product-page.scss';
+import '@styles/product-page.scss';
 
 type MenImageType = {
   url: string;

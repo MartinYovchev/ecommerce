@@ -1,7 +1,7 @@
 'use client';
 
 import Image from 'next/image';
-import '../styles/landing-page.scss';
+import '@styles/landing-page.scss';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
 
@@ -51,12 +51,10 @@ function Landing() {
         }
         const data: ProductDataType = await response.json();
 
-        // Random hero images
         const allImages = data.items.flatMap((product) => product.images);
         const randomHeroImages = shuffleArray(allImages).slice(0, 5);
         setHeroImages(randomHeroImages);
 
-        // Static featured products
         const randomFeaturedProducts = shuffleArray(data.items).slice(0, 4);
         setFeaturedProducts(randomFeaturedProducts);
       } catch (error) {

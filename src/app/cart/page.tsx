@@ -1,5 +1,5 @@
-import CartBasket from '../components/context/CartBasket';
-import { CartProvider } from '../components/context/CartContext';
+import { CartProvider } from '@context/CartContext';
+import CartBasket from './CartBasket';
 
 export default function CartPage() {
   return (

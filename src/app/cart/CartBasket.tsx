@@ -1,8 +1,8 @@
 'use client';
 
-import { useCart } from './CartContext';
+import { useCart } from '../../context/CartContext';
 import Image from 'next/image';
-import '../../styles/cart.scss';
+import '@styles/cart.scss';
 
 const CartBasket = () => {
   const { cart, removeFromCart, updateQuantity } = useCart();

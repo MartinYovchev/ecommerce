@@ -2,8 +2,8 @@
 
 import { useEffect, useState } from 'react';
 import Image from 'next/image';
-import '../../styles/item-page.scss';
-import { useCart } from '@/app/components/context/CartContext';
+import '@styles/item-page.scss';
+import { useCart } from '@context/CartContext';
 
 type ProductImageType = {
   url: string;

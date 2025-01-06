@@ -1,5 +1,6 @@
 'use client';
 
+import { ProductDetailsType } from '@/app/collection/[id]/ProductDetails';
 import React, {
   createContext,
   useState,
@@ -7,7 +8,6 @@ import React, {
   useEffect,
   ReactNode,
 } from 'react';
-import { ProductDetailsType } from '../../collection/[id]/ProductDetails';
 
 type CartContextType = {
   cart: ProductDetailsType[];

@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import '../styles/header.scss';
+import '@styles/header.scss';
 import Image from 'next/image';
 
 function Header() {
