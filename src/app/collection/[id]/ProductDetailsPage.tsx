@@ -39,9 +39,6 @@ function ProductDetailsPage() {
     <CartProvider>
       <div className="product-and-cart-container">
         <ProductDetails product={product} />
-        <div className="cart-basket-container">
-          <CartBasket />
-        </div>
       </div>
     </CartProvider>
   );

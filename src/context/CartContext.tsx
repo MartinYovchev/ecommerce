@@ -49,7 +49,7 @@ export const CartProvider: React.FC<CartProviderProps> = ({ children }) => {
       );
 
       if (existingProduct) {
-        existingProduct.quantity += quantity;
+        existingProduct.quantity += quantity / 2;
       } else {
         updatedCart.push({ ...product, quantity });
       }
