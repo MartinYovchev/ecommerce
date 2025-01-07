@@ -8,13 +8,16 @@ export async function POST(request: NextRequest) {
 
     const paymentIntent = await stripe.paymentIntents.create({
       amount: amount,
-      currency: "usd",
-      automatic_payment_methods: { enabled: true},
-
+      currency: 'usd',
+      automatic_payment_methods: { enabled: true },
+      metadata: { integration_check: 'accept_a_payment' },
     });
 
     return new Response(
-      JSON.stringify({ clientSecret: paymentIntent.client_secret }),
+      JSON.stringify({
+        clientSecret: paymentIntent.client_secret,
+        paymentIntent: paymentIntent.id,
+      }),
       { status: 200 }
     );
   } catch (error) {

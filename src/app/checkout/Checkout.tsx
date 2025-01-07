@@ -7,7 +7,7 @@ import {
   PaymentElement,
 } from '@stripe/react-stripe-js';
 import convertToSubcurrency from '@/lib/convertToSubcurrency';
-import Loading from '../loading';
+import '@styles/checkout-form.scss';
 
 function Checkout({ amount }: { amount: number }) {
   const stripe = useStripe();
@@ -33,27 +33,27 @@ function Checkout({ amount }: { amount: number }) {
       setLoading(false);
       return;
     }
+    const returnUrl = `${window.location.origin}/payment-success?amount=${amount as unknown as string}&payment_intent=${clientSecret.split('_', 2).join('_')}&payment_intent_client_secret=${clientSecret}&redirect_status=succeeded`;
 
+    alert(returnUrl);
     const { error } = await stripe.confirmPayment({
       elements,
       clientSecret,
-      confirmParams:{
-        return_url: `http://www.localhost:3000/payment-success?amount=${amount}`,
+      confirmParams: {
+        return_url: returnUrl,
       },
-    })
+    });
 
-  if (error){
-    setErrorMessage(error.message);
-  } else {
+    if (error) {
+      setErrorMessage(error.message);
+    } else {
+    }
 
-  }
-
-  setLoading(false)
-
+    setLoading(false);
   };
 
   useEffect(() => {
-    fetch('/api/create-payment-intent', {
+    fetch('/create-payment-intent', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -63,10 +63,6 @@ function Checkout({ amount }: { amount: number }) {
       .then((res) => res.json())
       .then((data) => setClientSecret(data.clientSecret));
   }, [amount]);
-
-  if(!stripe || !clientSecret || !elements){
-    return <Loading />
-  }
 
   return (
     <form onSubmit={handleSubmit}>

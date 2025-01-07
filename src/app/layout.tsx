@@ -1,6 +1,6 @@
 import { CartProvider } from '@/context/CartContext';
-import Footer from '@components/Footer';
-import Header from '@components/Header';
+import Footer from '@/components/layout/Footer';
+import Header from '@/components/layout/Header';
 
 export default function RootLayout({
   children,

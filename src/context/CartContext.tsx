@@ -16,6 +16,7 @@ type CartContextType = {
   removeFromCart: (id: string) => void;
   updateQuantity: (id: string, quantity: number) => void;
   totalPrice: number;
+  distinctItemsCount: number;
 };
 
 type CartProviderProps = {
@@ -41,31 +42,39 @@ export const CartProvider: React.FC<CartProviderProps> = ({ children }) => {
   }, [cart]);
 
   const addToCart = (product: ProductDetailsType, quantity: number) => {
-    const existingProduct = cart.find((item) => item.id === product.id);
-
-    if (existingProduct) {
-      setCart(
-        cart.map((item) =>
-          item.id === product.id
-            ? { ...item, quantity: item.quantity + quantity }
-            : item
-        )
+    setCart((prevCart) => {
+      const updatedCart = [...prevCart];
+      const existingProduct = updatedCart.find(
+        (item) => item.id === product.id
       );
-    } else {
-      setCart([...cart, { ...product, quantity }]);
-    }
+
+      if (existingProduct) {
+        existingProduct.quantity += quantity;
+      } else {
+        updatedCart.push({ ...product, quantity });
+      }
+
+      localStorage.setItem('cart', JSON.stringify(updatedCart));
+      return updatedCart;
+    });
   };
 
   const removeFromCart = (id: string) => {
-    setCart(cart.filter((item) => item.id !== id));
+    setCart((prevCart) => {
+      const updatedCart = prevCart.filter((item) => item.id !== id);
+      localStorage.setItem('cart', JSON.stringify(updatedCart));
+      return updatedCart;
+    });
   };
 
   const updateQuantity = (id: string, quantity: number) => {
-    setCart((prev) =>
-      prev.map((item) =>
+    setCart((prevCart) => {
+      const updatedCart = prevCart.map((item) =>
         item.id === id ? { ...item, quantity: Math.max(quantity, 1) } : item
-      )
-    );
+      );
+      localStorage.setItem('cart', JSON.stringify(updatedCart));
+      return updatedCart;
+    });
   };
 
   const totalPrice = useMemo(() => {
@@ -75,9 +84,20 @@ export const CartProvider: React.FC<CartProviderProps> = ({ children }) => {
     );
   }, [cart]);
 
+  const distinctItemsCount = useMemo(() => {
+    return cart.length;
+  }, [cart]);
+
   return (
     <CartContext.Provider
-      value={{ cart, addToCart, removeFromCart, updateQuantity, totalPrice }}
+      value={{
+        cart,
+        addToCart,
+        removeFromCart,
+        updateQuantity,
+        totalPrice,
+        distinctItemsCount,
+      }}
     >
       {children}
     </CartContext.Provider>

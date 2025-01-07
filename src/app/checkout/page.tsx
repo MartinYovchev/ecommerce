@@ -5,6 +5,7 @@ import Checkout from './Checkout';
 import convertToSubcurrency from '@/lib/convertToSubcurrency';
 import { Elements } from '@stripe/react-stripe-js';
 import { loadStripe } from '@stripe/stripe-js';
+import '@styles/checkout.scss';
 
 if (process.env.NEXT_PUBLIC_STRIPE_PUBLIC_KEY === undefined) {
   throw new Error('NEXT_PUBLIC_STRIPE_PUBLIC_KEY is not defined');
@@ -20,7 +21,7 @@ export default function CheckoutPage() {
       <div>
         <h1>SNEAKERS SHOP</h1>
         <h2>Has requested </h2>
-        <span>{totalPrice}</span>
+        <span>{totalPrice} $</span>
       </div>
       <Elements
         stripe={stripePromise}
