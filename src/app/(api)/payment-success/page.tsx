@@ -2,6 +2,7 @@
 
 import { useSearchParams } from 'next/navigation';
 import '@styles/success.scss';
+import { useEffect } from 'react';
 
 export default function SuccessPage() {
   const searchParams = useSearchParams();
@@ -17,12 +18,13 @@ export default function SuccessPage() {
     payment_intent &&
     payment_intent_client_secret &&
     amount;
-  console.log(
-    redirect_status,
-    payment_intent,
-    payment_intent_client_secret,
-    amount
-  );
+
+  useEffect(() => {
+    setTimeout(() => {
+      window.location.href = '/';
+    }, 5000);
+  }, []);
+
   return (
     <div className="success-container">
       <h1>{isSuccess ? 'Payment Successful!' : 'Payment Failed'}</h1>

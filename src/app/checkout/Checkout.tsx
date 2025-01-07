@@ -35,7 +35,6 @@ function Checkout({ amount }: { amount: number }) {
     }
     const returnUrl = `${window.location.origin}/payment-success?amount=${amount as unknown as string}&payment_intent=${clientSecret.split('_', 2).join('_')}&payment_intent_client_secret=${clientSecret}&redirect_status=succeeded`;
 
-    alert(returnUrl);
     const { error } = await stripe.confirmPayment({
       elements,
       clientSecret,
