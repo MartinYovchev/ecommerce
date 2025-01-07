@@ -6,7 +6,6 @@ import { useEffect, useState } from 'react';
 import { ProductDetailsType } from './ProductDetails';
 import { CartProvider } from '@context/CartContext';
 import '@styles/buying-page.scss';
-import CartBasket from '@/app/cart/CartBasket';
 
 function ProductDetailsPage() {
   const { id } = useParams();
