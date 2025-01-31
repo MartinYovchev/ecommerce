@@ -55,7 +55,7 @@ const CartBasket = () => {
             <h3>Total:</h3>
             <p>${totalPrice.toFixed(2)}</p>
           </div>
-          <Link href="/checkout">
+          <Link href="/checkout" passHref legacyBehavior>
             <button className="checkout-btn">Checkout</button>
           </Link>
         </div>

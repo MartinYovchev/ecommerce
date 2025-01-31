@@ -1,39 +1,39 @@
-$primary-color: #f8f8f8;
-$secondary-color: orange;
-$text-color: #f8f8f8;
-
-.loading-container {
+.loader-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
   align-items: center;
-  height: 100vh;
-  background: linear-gradient(135deg, $primary-color, $secondary-color);
-  color: $text-color;
-  font-family: 'Arial, sans-serif';
-  text-align: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(5px);
+}
 
-  .spinner {
-    width: 60px;
-    height: 60px;
-    border: 6px solid $text-color;
-    border-top: 6px solid $secondary-color;
-    border-radius: 50%;
-    animation: spin 1.2s linear infinite;
-  }
+.loader {
+  position: relative;
+  width: 50px;
+  height: 50px;
+  border: 5px solid transparent;
+  border-top: 5px solid #3498db;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
 
-  @keyframes spin {
-    0% {
-      transform: rotate(0deg);
-    }
-    100% {
-      transform: rotate(360deg);
-    }
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
   }
+  to {
+    transform: rotate(360deg);
+  }
+}
 
-  .loading-text {
-    margin-top: 20px;
-    font-size: 1.2rem;
-    font-weight: 500;
-  }
+.loading-text {
+  position: absolute;
+  top: 60px;
+  font-size: 16px;
+  color: #333;
+  font-weight: bold;
 }
