@@ -53,6 +53,7 @@ const ProductDetails = ({
       };
 
       addToCart(productWithQuantity, quantity);
+      window.location.reload();
     }
   };
 

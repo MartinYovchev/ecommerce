@@ -2,9 +2,9 @@
 
 import Link from 'next/link';
 import '@styles/header.scss';
-import Image from 'next/image';
 import CartButton from '../cartButton/CartButton';
 import { useCart } from '@/context/CartContext';
+import AccountButton from '../accButton/AccountButton';
 
 function Header() {
   const scrollToFooter = () => {
@@ -59,14 +59,7 @@ function Header() {
         </div>
         <div className="checkout-wrapper">
           <CartButton itemCount={distinctItemsCount} />
-          <div className="account-button">
-            <Image
-              src="/images_website/user.png"
-              width={40}
-              height={45}
-              alt="Account"
-            />
-          </div>
+          <AccountButton />
         </div>
       </div>
     </>

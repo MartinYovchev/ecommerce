@@ -33,7 +33,7 @@ function Checkout({ amount }: { amount: number }) {
       setLoading(false);
       return;
     }
-    const returnUrl = `${window.location.origin}/payment-success?amount=${amount as unknown as string}&payment_intent=${clientSecret.split('_', 2).join('_')}&payment_intent_client_secret=${clientSecret}&redirect_status=succeeded`;
+    const returnUrl = `${window.location.origin}/api/payment-success?amount=${amount as unknown as string}&payment_intent=${clientSecret.split('_', 2).join('_')}&payment_intent_client_secret=${clientSecret}&redirect_status=succeeded`;
 
     const { error } = await stripe.confirmPayment({
       elements,
@@ -52,7 +52,7 @@ function Checkout({ amount }: { amount: number }) {
   };
 
   useEffect(() => {
-    fetch('/create-payment-intent', {
+    fetch('/api/create-payment-intent', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

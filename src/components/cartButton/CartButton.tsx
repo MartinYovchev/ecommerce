@@ -5,7 +5,11 @@ import '@styles/cart-button.scss';
 
 const CartButton = ({ itemCount }: { itemCount: number }) => (
   <Link href="/cart" passHref legacyBehavior>
-    <a className="cart-button" aria-label={`Cart (${itemCount} items)`}>
+    <a
+      className="cart-button"
+      aria-label={`Cart (${itemCount} items)`}
+      style={{ all: 'unset' }}
+    >
       <div className="cart-container">
         <Image
           src="/images_website/shopping-cart.png"
