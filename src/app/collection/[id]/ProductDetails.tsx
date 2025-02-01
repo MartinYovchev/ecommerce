@@ -51,9 +51,7 @@ const ProductDetails = ({
         ...product,
         quantity: quantity,
       };
-
       addToCart(productWithQuantity, quantity);
-      window.location.reload();
     }
   };
 

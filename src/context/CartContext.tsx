@@ -16,7 +16,6 @@ type CartContextType = {
   removeFromCart: (id: string) => void;
   updateQuantity: (id: string, quantity: number) => void;
   totalPrice: number;
-  distinctItemsCount: number;
 };
 
 type CartProviderProps = {
@@ -44,17 +43,23 @@ export const CartProvider: React.FC<CartProviderProps> = ({ children }) => {
   const addToCart = (product: ProductDetailsType, quantity: number) => {
     setCart((prevCart) => {
       const updatedCart = [...prevCart];
-      const existingProduct = updatedCart.find(
+
+      const existingProductIndex = updatedCart.findIndex(
         (item) => item.id === product.id
       );
 
-      if (existingProduct) {
-        existingProduct.quantity += quantity / 2;
+      if (existingProductIndex !== -1) {
+        const existingProduct = updatedCart[existingProductIndex];
+        updatedCart[existingProductIndex] = {
+          ...existingProduct,
+          quantity: existingProduct.quantity + quantity,
+        };
       } else {
         updatedCart.push({ ...product, quantity });
       }
 
       localStorage.setItem('cart', JSON.stringify(updatedCart));
+
       return updatedCart;
     });
   };
@@ -84,10 +89,6 @@ export const CartProvider: React.FC<CartProviderProps> = ({ children }) => {
     );
   }, [cart]);
 
-  const distinctItemsCount = useMemo(() => {
-    return cart.length;
-  }, [cart]);
-
   return (
     <CartContext.Provider
       value={{
@@ -96,7 +97,6 @@ export const CartProvider: React.FC<CartProviderProps> = ({ children }) => {
         removeFromCart,
         updateQuantity,
         totalPrice,
-        distinctItemsCount,
       }}
     >
       {children}

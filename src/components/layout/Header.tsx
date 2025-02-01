@@ -2,8 +2,8 @@
 
 import Link from 'next/link';
 import '@styles/header.scss';
-import CartButton from '../cartButton/CartButton';
-import { useCart } from '@/context/CartContext';
+import CartButton from '../buttons/CartButton';
+import AuthButtons from '../buttons/AuthButtons';
 
 function Header() {
   const scrollToFooter = () => {
@@ -12,7 +12,6 @@ function Header() {
       footer.scrollIntoView({ behavior: 'smooth' });
     }
   };
-  const { distinctItemsCount } = useCart();
   return (
     <>
       <div className="header-wrapper">
@@ -57,7 +56,8 @@ function Header() {
           </div>
         </div>
         <div className="checkout-wrapper">
-          <CartButton itemCount={distinctItemsCount} />
+          <CartButton />
+          <AuthButtons />
         </div>
       </div>
     </>
