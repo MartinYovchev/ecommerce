@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 import Image from 'next/image';
 import '@styles/item-page.scss';
 import { useCart } from '@context/CartContext';
+import { useUser } from '@auth0/nextjs-auth0/client';
 
 type ProductImageType = {
   url: string;
@@ -34,6 +35,7 @@ const ProductDetails = ({
     null
   );
   const { addToCart } = useCart();
+  const { user } = useUser();
 
   useEffect(() => {
     if (product?.images && product.images.length > 0) {
@@ -45,7 +47,7 @@ const ProductDetails = ({
     return <p>No images available for this product.</p>;
   }
 
-  const handleAddToCart = () => {
+  const handleAddToCartLogged = () => {
     if (product) {
       const productWithQuantity = {
         ...product,
@@ -53,6 +55,10 @@ const ProductDetails = ({
       };
       addToCart(productWithQuantity, quantity);
     }
+  };
+
+  const handleAddToCartUnlogged = () => {
+    window.location.href = '/api/auth/login';
   };
 
   return (
@@ -125,7 +131,7 @@ const ProductDetails = ({
           </div>
           <button
             className={'product-details-addToCart'}
-            onClick={handleAddToCart}
+            onClick={user ? handleAddToCartLogged : handleAddToCartUnlogged}
           >
             Add to cart
           </button>

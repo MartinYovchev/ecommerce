@@ -11,7 +11,6 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-
           <UserProvider>
             <CartProvider>
               <Header />
