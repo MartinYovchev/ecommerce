@@ -4,6 +4,8 @@ import Link from 'next/link';
 import '@styles/header.scss';
 import CartButton from '../buttons/CartButton';
 import AuthButtons from '../buttons/AuthButtons';
+import { useUser } from '@auth0/nextjs-auth0/client';
+import AccountButton from '../buttons/AccountButton';
 
 function Header() {
   const scrollToFooter = () => {
@@ -12,6 +14,8 @@ function Header() {
       footer.scrollIntoView({ behavior: 'smooth' });
     }
   };
+
+  const { user } = useUser();
   return (
     <>
       <div className="header-wrapper">
@@ -57,7 +61,7 @@ function Header() {
         </div>
         <div className="checkout-wrapper">
           <CartButton />
-          <AuthButtons />
+          {user ? <AccountButton /> : <AuthButtons />}
         </div>
       </div>
     </>

@@ -1,0 +1,42 @@
+.account-button {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    background-color: #f7f7f7;
+    padding: 8px 12px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+  
+    &:hover {
+      background-color: #e0e0e0;
+    }
+  }
+  
+  .account-button__avatar {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+  
+  .account-button__name {
+    font-weight: 500;
+    font-size: 14px;
+  }
+  
+  .account-button__logout {
+    background-color: #ff4f4f;
+    border: none;
+    color: white;
+    font-size: 12px;
+    padding: 6px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  
+    &:hover {
+      background-color: #ff3333;
+    }
+  }
+  

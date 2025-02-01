@@ -1,25 +1,15 @@
 import React from 'react';
 import '@styles/auth-buttons.scss';
+import Link from 'next/link';
 
 function AuthButtons() {
-  const handleLogin = () => {
-    // Handle login logic here
-    console.log('Login button clicked');
-  };
-
-  const handleRegister = () => {
-    // Handle register logic here
-    console.log('Register button clicked');
-  };
-
   return (
     <div className="auth-container">
-      <button className="auth-button" data-type="login" onClick={handleLogin}>
-        Login
-      </button>
-      <button className="auth-button" data-type="register" onClick={handleRegister}>
-        Register
-      </button>
+      <Link href="../api/auth/login" legacyBehavior>
+        <button className="auth-button" data-type="register">
+          SIGN UP
+        </button>
+      </Link>
     </div>
   );
 }
