@@ -16,6 +16,7 @@ type CartContextType = {
   removeFromCart: (id: string) => void;
   updateQuantity: (id: string, quantity: number) => void;
   totalPrice: number;
+  cartCount: number;
 };
 
 type CartProviderProps = {
@@ -89,6 +90,11 @@ export const CartProvider: React.FC<CartProviderProps> = ({ children }) => {
     );
   }, [cart]);
 
+  const cartCount = useMemo(() => {
+    const distinctItems = new Set(cart.map((item) => item.id));
+    return distinctItems.size;
+  }, [cart]);
+
   return (
     <CartContext.Provider
       value={{
@@ -97,6 +103,7 @@ export const CartProvider: React.FC<CartProviderProps> = ({ children }) => {
         removeFromCart,
         updateQuantity,
         totalPrice,
+        cartCount,
       }}
     >
       {children}
