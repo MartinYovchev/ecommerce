@@ -5,6 +5,8 @@ import Image from 'next/image';
 import '@styles/item-page.scss';
 import { useCart } from '@context/CartContext';
 import { useUser } from '@auth0/nextjs-auth0/client';
+import { ToastContainer, toast } from 'react-toastify';
+import '@styles/notification.scss';
 
 type ProductImageType = {
   url: string;
@@ -55,6 +57,31 @@ const ProductDetails = ({
       };
       addToCart(productWithQuantity, quantity);
     }
+    toast.success(
+      <div className="notification">
+        <Image
+          src="/images_website/check.png"
+          alt="Check Icon"
+          width={30}
+          height={37}
+          className="icon"
+        />
+        Item added to cart!
+      </div>,
+      {
+        position: 'top-center',
+        autoClose: 3000,
+        hideProgressBar: true,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        style: {
+          background: 'transparent',
+          boxShadow: 'none',
+          color: 'white',
+        },
+      }
+    );
   };
 
   const handleAddToCartUnlogged = () => {
@@ -135,6 +162,7 @@ const ProductDetails = ({
           >
             Add to cart
           </button>
+          <ToastContainer />
         </div>
       </div>
     </div>

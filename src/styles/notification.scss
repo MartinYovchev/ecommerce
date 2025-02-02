@@ -1,0 +1,19 @@
+.notification {
+  display: flex;
+  align-items: center;
+  background-color: #f8f9fa;
+  padding: 15px 20px;
+  border-radius: 8px;
+  border: 1px solid #e9ecef;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  font-size: 18px;
+  color: #212529;
+  min-width: 100%;
+
+  .icon {
+    margin-top: 10px;
+    margin-right: 10px;
+    width: 30px;
+    height: 37px;
+  }
+}
