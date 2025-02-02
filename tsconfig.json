@@ -25,7 +25,8 @@
       "@context/*": ["./src/context/*"],
       "@collection/*": ["./src/collection/*"],
       "@lib/*": ["./src/lib/*"],
-      "@images/*": ["./src/public/images_website/*"]
+      "@images/*": ["./src/public/images_website/*"],
+      "@hooks/*": ["./src/hooks/*"]
     }
   },
   "include": [
