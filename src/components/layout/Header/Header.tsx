@@ -1,20 +1,13 @@
 'use client';
 
-import { useState } from 'react';
 import Link from 'next/link';
-import '@styles/header.scss';
-import CartButton from '../buttons/CartButton';
-import AuthButtons from '../buttons/AuthButtons';
+import './header.scss';
+import CartButton from '../../buttons/CartButton';
+import AuthButtons from '../../buttons/AuthButtons';
 import { useUser } from '@auth0/nextjs-auth0/client';
-import AccountButton from '../buttons/AccountButton';
-import { useIsMobile } from '@hooks/useIsMobile';
-import '@styles/mobile-header.scss';
+import AccountButton from '../../buttons/AccountButton';
 
-function MobileHeader() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const isMobile = useIsMobile();
-  const { user } = useUser();
-
+function Header() {
   const scrollToFooter = () => {
     const footer = document.getElementById('footer');
     if (footer) {
@@ -22,10 +15,7 @@ function MobileHeader() {
     }
   };
 
-  const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
-  };
-
+  const { user } = useUser();
   return (
     <>
       <div className="header-wrapper">
@@ -35,16 +25,7 @@ function MobileHeader() {
               <a style={{ all: 'unset' }}>SNEAKERS</a>
             </Link>
           </div>
-
-          {isMobile && (
-            <div className="mobile-menu-icon" onClick={toggleMenu}>
-              <span className="burger-line"></span>
-              <span className="burger-line"></span>
-              <span className="burger-line"></span>
-            </div>
-          )}
-
-          <div className={`header-navigation ${isMenuOpen ? 'open' : ''}`}>
+          <div className="header-navigation">
             <ul>
               <li>
                 <Link href="/collection" passHref legacyBehavior>
@@ -78,7 +59,6 @@ function MobileHeader() {
             </ul>
           </div>
         </div>
-
         <div className="checkout-wrapper">
           <CartButton />
           {user ? <AccountButton /> : <AuthButtons />}
@@ -87,5 +67,4 @@ function MobileHeader() {
     </>
   );
 }
-
-export default MobileHeader;
+export default Header;

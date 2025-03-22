@@ -1,4 +1,4 @@
-import '@styles/footer.scss';
+import './footer.scss';
 import Image from 'next/image';
 
 function Footer() {
