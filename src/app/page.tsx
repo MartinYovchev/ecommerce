@@ -1,6 +1,5 @@
-import Landing from './landing/Landing';
+import Home from './v2/home/Home';
 
-export default async function Home() {
-
-  return <Landing />;
+export default async function HomePage() {
+  return <Home />;
 }

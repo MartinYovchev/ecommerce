@@ -3,6 +3,11 @@
 .navbar {
   display: flex;
   justify-content: space-between;
+  position: fixed;
+  top: 0;
+  right: 0%;
+  width: 100%;
+  z-index: 1000;
   align-items: center;
   padding: 20px;
   background-color: $primary-color;
@@ -127,13 +132,13 @@
 
 @media (max-width: 768px) {
   .logo {
-    padding-left: 1rem;
+    padding-left: 3rem;
   }
   .links {
     display: flex;
     flex-direction: column;
     gap: 15px;
-    width: 80%;
+    width: 50%;
     padding: 60px 20px 20px;
     background-color: $primary-color;
     position: fixed;

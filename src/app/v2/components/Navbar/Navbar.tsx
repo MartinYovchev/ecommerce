@@ -1,7 +1,9 @@
-import { Link } from 'react-router-dom';
+// Your Navbar Component
+import Link from 'next/link';
 import { useState, useRef, MouseEvent } from 'react';
 import styles from './Navbar.module.scss';
-import useClickAway from '../../hooks/clickAway';
+import useClickAway from '../../hooks/useClickAway';
+
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [dropdownOpen, setDropdownOpen] = useState(false);
@@ -21,7 +23,7 @@ function Navbar() {
   return (
     <nav className={styles.navbar}>
       <div className={styles.logo}>
-        <Link to="/">Sneakers</Link>
+        <Link href="/">Sneakers</Link>
       </div>
 
       <div className={`${styles.links} ${isOpen ? styles.open : ''}`}>
@@ -29,7 +31,7 @@ function Navbar() {
           &times;
         </div>
         <Link
-          to="/"
+          href="/"
           onClick={() => {
             setDropdownOpen(false);
             setIsOpen(false);
@@ -42,7 +44,7 @@ function Navbar() {
           {dropdownOpen && (
             <div className={styles.dropdownMenu}>
               <Link
-                to="/women-shoes"
+                href="/women-shoes"
                 onClick={() => {
                   setDropdownOpen(false);
                   setIsOpen(false);
@@ -51,7 +53,7 @@ function Navbar() {
                 Women Shoes
               </Link>
               <Link
-                to="/men-shoes"
+                href="/men-shoes"
                 onClick={() => {
                   setDropdownOpen(false);
                   setIsOpen(false);
@@ -60,7 +62,7 @@ function Navbar() {
                 Men Shoes
               </Link>
               <Link
-                to="/kids-shoes"
+                href="/kids-shoes"
                 onClick={() => {
                   setDropdownOpen(false);
                   setIsOpen(false);
@@ -72,7 +74,7 @@ function Navbar() {
           )}
         </div>
         <Link
-          to="/about"
+          href="/about"
           onClick={() => {
             setDropdownOpen(false);
             setIsOpen(false);
@@ -81,7 +83,7 @@ function Navbar() {
           About
         </Link>
         <Link
-          to="/contact"
+          href="/contact"
           onClick={() => {
             setDropdownOpen(false);
             setIsOpen(false);
@@ -91,7 +93,7 @@ function Navbar() {
         </Link>
 
         <Link
-          to="/login"
+          href="/login"
           className={styles.loginButton}
           onClick={() => {
             setDropdownOpen(false);
@@ -101,7 +103,7 @@ function Navbar() {
           Login
         </Link>
         <Link
-          to="/signup"
+          href="/signup"
           className={styles.signupButton}
           onClick={() => {
             setDropdownOpen(false);

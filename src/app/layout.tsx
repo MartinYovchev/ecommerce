@@ -1,8 +1,8 @@
 'use client';
 
 import { CartProvider } from '@/context/CartContext';
-import Footer from '@/components/layout/Footer/Footer';
-import Header from '@/components/layout/Header/Header';
+import Footer from '@/app/v2/components/Footer/Footer';
+
 import { UserProvider } from '@auth0/nextjs-auth0/client';
 import '@/app/v2/styles/global.scss';
 import Navbar from './v2/components/Navbar/Navbar';
@@ -21,8 +21,16 @@ export default function RootLayout({
             <CartProvider>
               {/* <Header /> */}
               <Navbar />
-              <main className="container">{children}</main>
-              <Footer />
+              <div
+                style={{
+                  display: 'flex',
+                  flexDirection: 'column',
+                  minHeight: '100vh',
+                }}
+              >
+                <main style={{ flex: 1 }}>{children}</main>
+                <Footer />
+              </div>
             </CartProvider>
           </Router>
         </UserProvider>
