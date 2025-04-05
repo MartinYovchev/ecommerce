@@ -1,27 +1,28 @@
-$mobile: 480px;
-$tablet: 768px;
-$laptop: 1024px;
-$desktop: 1440px;
+$extra-large-desktop-breakpoint: 1920px;
+$large-desktop-breakpoint: 1440px;
+$desktop-breakpoint: 1024px;
+$tablet-breakpoint: 768px;
+$mobile-breakpoint: 320px;
 
-@mixin respond($device) {
-  @if $device == mobile {
-    @media (max-width: #{$mobile}) {
+@mixin breakpoint($point) {
+  @if $point == mobile {
+    @media (min-width: $mobile-breakpoint) {
       @content;
     }
-  } @else if $device == tablet {
-    @media (min-width: #{ $mobile + 1}px) and (max-width: #{$tablet}) {
+  } @else if $point == tablet {
+    @media (min-width: $tablet-breakpoint) {
       @content;
     }
-  } @else if $device == laptop {
-    @media (min-width: #{ $tablet + 1}px) and (max-width: #{$laptop}) {
+  } @else if $point == desktop {
+    @media (min-width: $desktop-breakpoint) {
       @content;
     }
-  } @else if $device == desktop {
-    @media (min-width: #{ $laptop + 1}px) and (max-width: #{$desktop}) {
+  } @else if $point == large-desktop-breakpoint {
+    @media (min-width: $large-desktop-breakpoint) {
       @content;
     }
-  } @else if $device == ultrawide {
-    @media (min-width: #{ $desktop + 1}px) {
+  } @else if $point == extra-large-desktop-breakpoint {
+    @media (min-width: $extra-large-desktop-breakpoint) {
       @content;
     }
   }

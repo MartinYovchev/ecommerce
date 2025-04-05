@@ -4,7 +4,7 @@
       "id": "1",
       "name": "Nike Air Jordan 1 Retro OG",
       "info": "The iconic Air Jordan 1 in its original 'Chicago' colorway, featuring a high-top design and premium leather construction.",
-      "type": "men",
+      "type": "men-shoes",
       "price": "170",
       "images": [
         {
@@ -21,7 +21,7 @@
       "id": "2",
       "name": "Adidas Yeezy Boost 350 V2",
       "info": "The Adidas Yeezy Boost 350 V2, known for its sleek and futuristic design, featuring a knit upper and Boost cushioning.",
-      "type": "men",
+      "type": "men-shoes",
       "price": "220",
       "images": [
         {
@@ -38,7 +38,7 @@
       "id": "3",
       "name": "Nike Air Max 97 OG",
       "info": "The Air Max 97 OG, a retro running sneaker with reflective silver and red accents, known for its sleek design and visible Air cushioning.",
-      "type": "women",
+      "type": "women-shoes",
       "price": "180",
       "images": [
         {
@@ -55,7 +55,7 @@
       "id": "4",
       "name": "Puma Clyde Court",
       "info": "The Puma Clyde Court, a modern basketball sneaker with performance features and a stylish design, featuring a knit upper and responsive cushioning.",
-      "type": "men",
+      "type": "men-shoes",
       "price": "120",
       "images": [
         {
@@ -72,7 +72,7 @@
       "id": "5",
       "name": "New Balance 990v5",
       "info": "The New Balance 990v5, known for its classic American style, premium suede/mesh upper, and cushioned midsole, perfect for casual wear or running.",
-      "type": "men",
+      "type": "men-shoes",
       "price": "175",
       "images": [
         {
@@ -89,7 +89,7 @@
       "id": "6",
       "name": "Nike Air Max 270 React",
       "info": "The Nike Air Max 270 React combines the iconic Air Max cushioning with modern React foam for ultimate comfort and style.",
-      "type": "women",
+      "type": "women-shoes",
       "price": "150",
       "images": [
         {
@@ -106,7 +106,7 @@
       "id": "7",
       "name": "Adidas Ultra Boost 22",
       "info": "The Adidas Ultra Boost 22 delivers next-level comfort with its full-length Boost midsole, engineered mesh upper, and responsive cushioning.",
-      "type": "women",
+      "type": "women-shoes",
       "price": "180",
       "images": [
         {
@@ -123,7 +123,7 @@
       "id": "8",
       "name": "Nike Air VaporMax Plus",
       "info": "The Nike Air VaporMax Plus features futuristic design lines and a unique Air cushioning system for exceptional comfort.",
-      "type": "men",
+      "type": "men-shoes",
       "price": "200",
       "images": [
         {
@@ -140,7 +140,7 @@
       "id": "9",
       "name": "Under Armour Curry One",
       "info": "The Under Armour Curry One basketball sneaker is built for performance, featuring a lightweight design and responsive cushioning for quick movements.",
-      "type": "men",
+      "type": "men-shoes",
       "price": "130",
       "images": [
         {
@@ -208,7 +208,7 @@
       "id": "13",
       "name": "Vans Old Skool Classic",
       "info": "Vans Old Skool Classic, with its iconic side stripe and durable canvas construction, perfect for skateboarding and casual wear.",
-      "type": "men",
+      "type": "men-shoes",
       "price": "60",
       "images": [
         {
@@ -225,7 +225,7 @@
       "id": "14",
       "name": "Reebok Classic Leather",
       "info": "The Reebok Classic Leather sneaker combines comfort and style with a leather upper and EVA midsole, offering a clean, retro design.",
-      "type": "women",
+      "type": "women-shoes",
       "price": "85",
       "images": [
         {
@@ -242,7 +242,7 @@
       "id": "15",
       "name": "Nike Zoom Freak 1",
       "info": "The Nike Zoom Freak 1, designed for Giannis Antetokounmpo, featuring responsive Zoom Air cushioning and a lightweight mesh upper.",
-      "type": "men",
+      "type": "men-shoes",
       "price": "120",
       "images": [
         {
@@ -259,7 +259,7 @@
       "id": "16",
       "name": "Converse Chuck Taylor All Star",
       "info": "The Converse Chuck Taylor All Star, an all-time classic, featuring a canvas upper, rubber sole, and a timeless silhouette.",
-      "type": "women",
+      "type": "women-shoes",
       "price": "60",
       "images": [
         {
@@ -276,7 +276,7 @@
       "id": "17",
       "name": "Balenciaga Triple S",
       "info": "The Balenciaga Triple S is a luxury sneaker with a chunky silhouette and multi-layered sole, blending high-fashion with streetwear.",
-      "type": "men",
+      "type": "men-shoes",
       "price": "950",
       "images": [
         {
@@ -301,12 +301,97 @@
       "id": "18",
       "name": "Nike Air Force 1",
       "info": "The Nike Air Force 1 is a versatile classic sneaker, known for its clean white leather upper and cushioned sole for all-day comfort.",
-      "type": "women",
+      "type": "women-shoes",
       "price": "90",
       "images": [
         {
           "url": "/images_website/11.jpg",
           "alt": "Nike Air Force 1",
+          "size": {
+            "width": "300",
+            "height": "300"
+          }
+        }
+      ]
+    },
+    {
+      "id": "20",
+      "name": "Nike Kids Revolution 5",
+      "info": "The Nike Kids Revolution 5 offers lightweight cushioning and durable support for growing feet, perfect for active children.",
+      "type": "kid-shoes",
+      "price": "55",
+      "images": [
+        {
+          "url": "/images_website/kid1.jpg",
+          "alt": "Nike Kids Revolution 5",
+          "size": {
+            "width": "300",
+            "height": "300"
+          }
+        }
+      ]
+    },
+    {
+      "id": "21",
+      "name": "Adidas Kids Superstar",
+      "info": "The iconic Adidas Superstar in kids' size, featuring the famous shell toe and comfortable fit for everyday wear.",
+      "type": "kid-shoes",
+      "price": "65",
+      "images": [
+        {
+          "url": "/images_website/kid2.jpg",
+          "alt": "Adidas Kids Superstar",
+          "size": {
+            "width": "300",
+            "height": "300"
+          }
+        }
+      ]
+    },
+    {
+      "id": "22",
+      "name": "Puma Kids Smash v2",
+      "info": "The Puma Kids Smash v2 offers a classic tennis-inspired design with a comfortable fit and durable construction for active kids.",
+      "type": "kid-shoes",
+      "price": "45",
+      "images": [
+        {
+          "url": "/images_website/kid3.jpg",
+          "alt": "Puma Kids Smash v2",
+          "size": {
+            "width": "300",
+            "height": "300"
+          }
+        }
+      ]
+    },
+    {
+      "id": "23",
+      "name": "New Balance Kids 574 Core",
+      "info": "The New Balance Kids 574 Core provides excellent support and comfort with a classic retro design for everyday wear.",
+      "type": "kid-shoes",
+      "price": "60",
+      "images": [
+        {
+          "url": "/images_website/kid4.jpg",
+          "alt": "New Balance Kids 574 Core",
+          "size": {
+            "width": "300",
+            "height": "300"
+          }
+        }
+      ]
+    },
+    {
+      "id": "24",
+      "name": "Vans Kids Old Skool",
+      "info": "The Vans Kids Old Skool features the iconic side stripe and durable canvas construction, perfect for kids who want a classic skate look.",
+      "type": "kid-shoes",
+      "price": "50",
+      "images": [
+        {
+          "url": "/images_website/kid5.jpg",
+          "alt": "Vans Kids Old Skool",
           "size": {
             "width": "300",
             "height": "300"

@@ -1,0 +1,51 @@
+/* V2 Global Styles */
+
+body {
+  margin: 0;
+  font-family: 'YourFontFamily', sans-serif; /* Replace with actual font-family */
+  background-color: #f0f0f0; /* Replace with actual background-color */
+  color: #333; /* Replace with actual text-color */
+}
+
+.container {
+  width: 90%;
+  margin: auto;
+  padding: 1rem;
+}
+
+/* Mobile breakpoint: min-width 320px */
+@media (min-width: 320px) {
+  .container {
+    width: 95%;
+  }
+}
+
+/* Tablet breakpoint: min-width 768px */
+@media (min-width: 768px) {
+  .container {
+    width: 90%;
+  }
+}
+
+/* Desktop breakpoint: min-width 1024px */
+@media (min-width: 1024px) {
+  .container {
+    width: 85%;
+  }
+}
+
+/* Large desktop breakpoint: min-width 1440px */
+@media (min-width: 1440px) {
+  .container {
+    width: 75%;
+    max-width: 1200px;
+  }
+}
+
+/* Extra-large desktop breakpoint: min-width 1920px */
+@media (min-width: 1920px) {
+  .container {
+    width: 70%;
+    max-width: 1600px;
+  }
+}
