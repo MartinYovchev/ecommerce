@@ -2,7 +2,6 @@
 
 import Link from 'next/link';
 import styles from './Home.module.scss';
-import { useEffect, useState } from 'react';
 import Carousel from './Carousel/Carousel';
 import FeatureProducts from './FeatureProducts/FeatureProducts';
 import InfoSection from './InfoSection/InfoSection';

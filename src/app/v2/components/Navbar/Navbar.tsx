@@ -74,7 +74,7 @@ function Navbar() {
           )}
         </div>
         <Link
-          href="/about"
+          href="/v2/about"
           onClick={() => {
             setDropdownOpen(false);
             setIsOpen(false);

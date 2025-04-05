@@ -41,8 +41,8 @@ export default function InfoSection() {
       <div className={styles.infoHeader}>
         <h2>Why Shop With Us?</h2>
         <p className={styles.subheading}>
-          We're dedicated to providing an exceptional shopping experience from
-          click to delivery
+          We&aposre dedicated to providing an exceptional shopping experience
+          from click to delivery
         </p>
       </div>
 
