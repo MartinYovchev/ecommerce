@@ -26,7 +26,10 @@ function Navbar() {
         <Link href="/">Sneakers</Link>
       </div>
 
-      <div className={`${styles.links} ${isOpen ? styles.open : ''}`}>
+      <div
+        className={`${styles.links} ${isOpen ? styles.open : ''}`}
+        ref={menuRef}
+      >
         <div className={styles.closeButton} onClick={toggleMenu}>
           &times;
         </div>
@@ -44,16 +47,7 @@ function Navbar() {
           {dropdownOpen && (
             <div className={styles.dropdownMenu}>
               <Link
-                href="/women-shoes"
-                onClick={() => {
-                  setDropdownOpen(false);
-                  setIsOpen(false);
-                }}
-              >
-                Women Shoes
-              </Link>
-              <Link
-                href="/men-shoes"
+                href="/v2/products/men-shoes"
                 onClick={() => {
                   setDropdownOpen(false);
                   setIsOpen(false);
@@ -62,13 +56,31 @@ function Navbar() {
                 Men Shoes
               </Link>
               <Link
-                href="/kids-shoes"
+                href="/v2/products/women-shoes"
+                onClick={() => {
+                  setDropdownOpen(false);
+                  setIsOpen(false);
+                }}
+              >
+                Women Shoes
+              </Link>
+              <Link
+                href="/v2/products/kid-shoes"
                 onClick={() => {
                   setDropdownOpen(false);
                   setIsOpen(false);
                 }}
               >
                 Kids Shoes
+              </Link>
+              <Link
+                href="/v2/collection"
+                onClick={() => {
+                  setDropdownOpen(false);
+                  setIsOpen(false);
+                }}
+              >
+                View All Collections
               </Link>
             </div>
           )}
