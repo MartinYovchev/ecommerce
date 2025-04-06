@@ -1,10 +1,9 @@
 'use client';
 
-import { CartProvider } from '@/context/CartContext';
+import { CartProvider } from '@/app/v2/context/CartContext';
 import Footer from '@/app/v2/components/Footer/Footer';
 
 import { UserProvider } from '@auth0/nextjs-auth0/client';
-import '@/styles/globals.css';
 import '@/app/v2/styles/global.css';
 import Navbar from './v2/components/Navbar/Navbar';
 import { BrowserRouter as Router } from 'react-router-dom';
@@ -20,7 +19,6 @@ export default function RootLayout({
         <UserProvider>
           <Router>
             <CartProvider>
-              {/* <Header /> */}
               <Navbar />
               <div
                 style={{

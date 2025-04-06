@@ -26,7 +26,6 @@ type ProductType = {
 };
 
 export default function FeatureProducts() {
-  // Get products from three categories to display as featured
   const { products: menProducts, loading: menLoading } =
     useFetchProductsByType('men-shoes');
   const { products: womenProducts, loading: womenLoading } =

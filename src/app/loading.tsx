@@ -1,5 +1,5 @@
 import React from 'react';
-// import '@styles/loading.scss';
+import './v2/styles/loading.scss';
 
 export default function Loading({ isLoading }: { isLoading: boolean }) {
   return (
