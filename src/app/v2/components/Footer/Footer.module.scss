@@ -1,48 +1,32 @@
+@use '../../styles/variables' as *;
+
 .footer {
-  background-color: #333;
-  color: white;
-  padding: 20px 15px;
+  background-color: white;
+  padding: 20px 0;
   margin-top: auto;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  border-top: 1px solid $border-color;
+}
 
-  .container {
-    max-width: 1200px;
-    width: 100%;
-    text-align: center;
-
-    @media (min-width: 768px) {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-  }
+.content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  text-align: center;
+  color: $secondary-color;
+  font-size: 0.9rem;
 
   p {
     margin: 0;
-    font-size: 14px;
   }
+}
 
-  .links {
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-    margin-top: 10px;
+.creatorLink {
+  color: $primary-color;
+  text-decoration: none;
+  font-weight: 600;
+  transition: $transition;
 
-    @media (min-width: 768px) {
-      margin-top: 0;
-    }
-
-    a {
-      color: white;
-      text-decoration: none;
-      font-size: 14px;
-      transition: color 0.3s;
-
-      &:hover {
-        color: #f39c12;
-      }
-    }
+  &:hover {
+    color: $hover-color;
   }
 }

@@ -1,4 +1,6 @@
 // Your Navbar Component
+
+'use client';
 import Link from 'next/link';
 import { useState, useRef, MouseEvent } from 'react';
 import styles from './Navbar.module.scss';
@@ -95,7 +97,7 @@ function Navbar() {
           About
         </Link>
         <Link
-          href="/contact"
+          href="/v2/contact"
           onClick={() => {
             setDropdownOpen(false);
             setIsOpen(false);

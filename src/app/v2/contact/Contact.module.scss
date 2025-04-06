@@ -1,0 +1,385 @@
+@use '../styles/variables' as *;
+
+.contactContainer {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 80px 20px 40px;
+
+  @media (max-width: 768px) {
+    padding: 100px 20px 40px;
+  }
+}
+
+.hero {
+  text-align: center;
+  margin-bottom: 50px;
+
+  h1 {
+    font-size: 3rem;
+    margin-bottom: 16px;
+
+    @media (max-width: 768px) {
+      font-size: 2.5rem;
+    }
+  }
+
+  p {
+    font-size: 1.25rem;
+    color: $secondary-color;
+    max-width: 600px;
+    margin: 0 auto;
+
+    @media (max-width: 768px) {
+      font-size: 1.1rem;
+    }
+  }
+}
+
+.contentWrapper {
+  display: flex;
+  gap: 40px;
+  margin-bottom: 60px;
+
+  @media (max-width: 992px) {
+    flex-direction: column;
+  }
+}
+
+.contactInfo {
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+
+  @media (max-width: 1200px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.infoCard {
+  background-color: white;
+  border-radius: 10px;
+  padding: 25px;
+  box-shadow: $box-shadow;
+  transition: $transition;
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+
+    .iconWrapper {
+      background-color: $primary-color;
+      color: white;
+    }
+  }
+
+  h3 {
+    font-size: 1.25rem;
+    margin: 15px 0 10px;
+  }
+
+  p {
+    color: $secondary-color;
+    margin-bottom: 15px;
+    line-height: 1.5;
+  }
+
+  .iconWrapper {
+    background-color: #f4f4f9;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: $primary-color;
+    transition: $transition;
+  }
+
+  .contactLink {
+    display: inline-block;
+    color: $primary-color;
+    font-weight: 600;
+    text-decoration: none;
+    margin-top: 5px;
+    transition: $transition;
+
+    &:hover {
+      color: $hover-color;
+    }
+  }
+
+  .address {
+    color: $secondary-color;
+    font-style: normal;
+    line-height: 1.5;
+  }
+
+  .hours {
+    font-size: 0.85rem;
+    color: $secondary-color;
+    margin-top: 5px;
+  }
+}
+
+.contactForm {
+  flex: 1;
+
+  .formContainer {
+    background-color: white;
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: $box-shadow;
+
+    h2 {
+      font-size: 1.8rem;
+      margin-bottom: 10px;
+    }
+
+    p {
+      color: $secondary-color;
+      margin-bottom: 25px;
+    }
+  }
+
+  .form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .formGroup {
+    display: flex;
+    flex-direction: column;
+
+    label {
+      margin-bottom: 8px;
+      font-weight: 600;
+    }
+
+    input,
+    textarea {
+      padding: 12px 15px;
+      border: 1px solid $border-color;
+      border-radius: 5px;
+      font-size: 1rem;
+      transition: $transition;
+
+      &:focus {
+        outline: none;
+        border-color: $primary-color;
+        box-shadow: 0 0 0 2px rgba($primary-color, 0.2);
+      }
+
+      &.errorInput {
+        border-color: #e74c3c;
+      }
+    }
+
+    .errorMessage {
+      color: #e74c3c;
+      font-size: 0.85rem;
+      margin-top: 5px;
+    }
+  }
+
+  .submitButton {
+    background-color: $primary-color;
+    color: white;
+    padding: 14px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: $transition;
+    margin-top: 10px;
+
+    &:hover {
+      background-color: darken($primary-color, 10%);
+    }
+
+    &:disabled {
+      background-color: lighten($primary-color, 20%);
+      cursor: not-allowed;
+    }
+  }
+
+  .successMessage {
+    background-color: #d4edda;
+    color: #155724;
+    border-radius: 5px;
+    padding: 20px;
+    text-align: center;
+
+    svg {
+      color: #28a745;
+      margin-bottom: 10px;
+    }
+
+    h3 {
+      font-size: 1.4rem;
+      margin-bottom: 10px;
+    }
+
+    p {
+      color: #155724;
+    }
+  }
+}
+
+.mapSection {
+  margin-bottom: 60px;
+
+  h2 {
+    font-size: 2rem;
+    margin-bottom: 25px;
+    text-align: center;
+  }
+
+  .mapContainer {
+    background-color: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: $box-shadow;
+  }
+
+  .mapPlaceholder {
+    height: 400px;
+    background-color: #f4f4f9;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+
+    .mapMarker {
+      width: 30px;
+      height: 30px;
+      background-color: $primary-color;
+      border-radius: 50% 50% 50% 0;
+      transform: rotate(-45deg);
+      margin-bottom: 20px;
+
+      &:after {
+        content: '';
+        width: 15px;
+        height: 15px;
+        background-color: white;
+        border-radius: 50%;
+        position: absolute;
+        top: 7.5px;
+        left: 7.5px;
+      }
+    }
+
+    p {
+      margin-bottom: 20px;
+      color: $secondary-color;
+    }
+
+    .directionsButton {
+      background-color: $primary-color;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 5px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: $transition;
+
+      &:hover {
+        background-color: darken($primary-color, 10%);
+      }
+    }
+  }
+}
+
+.faqSection {
+  margin-bottom: 60px;
+
+  h2 {
+    font-size: 2rem;
+    margin-bottom: 25px;
+    text-align: center;
+  }
+
+  .faqContainer {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+
+    @media (max-width: 768px) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .faqItem {
+    background-color: white;
+    border-radius: 10px;
+    padding: 25px;
+    box-shadow: $box-shadow;
+    transition: $transition;
+
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    h3 {
+      font-size: 1.2rem;
+      margin-bottom: 12px;
+      color: $primary-color;
+    }
+
+    p {
+      color: $secondary-color;
+      line-height: 1.5;
+    }
+  }
+}
+
+.ctaSection {
+  background-color: #f4f4f9;
+  border-radius: 10px;
+  padding: 40px 30px;
+  text-align: center;
+  margin-bottom: 20px;
+
+  h2 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+  }
+
+  p {
+    max-width: 600px;
+    margin: 0 auto 25px;
+    color: $secondary-color;
+  }
+
+  .socialLinks {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+
+    .socialLink {
+      background-color: white;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: $primary-color;
+      box-shadow: $box-shadow;
+      transition: $transition;
+
+      &:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        background-color: $primary-color;
+        color: white;
+      }
+    }
+  }
+}
