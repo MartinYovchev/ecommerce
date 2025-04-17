@@ -1,0 +1,117 @@
+@use '../../styles/variables' as *;
+@use '../../styles/breakpoints' as *;
+
+.categoriesGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 30px;
+  padding: 40px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.categoryCard {
+  background-color: $background-color;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition:
+    transform $transition,
+    box-shadow $transition;
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  }
+}
+
+.imageContainer {
+  position: relative;
+  width: 100%;
+  height: 200px;
+}
+
+.categoryImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.featuredBadge {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: $primary-color;
+  color: white;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+
+.categoryInfo {
+  padding: 20px;
+
+  h2 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    color: $text-color;
+  }
+
+  p {
+    font-size: 0.9rem;
+    color: $text-color-secondary;
+    margin-bottom: 15px;
+  }
+}
+
+.exploreButton {
+  display: inline-block;
+  padding: 8px 16px;
+  background-color: $primary-color;
+  color: white;
+  text-decoration: none;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  transition: background-color $transition;
+
+  &:hover {
+    background-color: darken($primary-color, 10%);
+  }
+}
+
+@media (max-width: $tablet-breakpoint) {
+  .categoriesGrid {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 30px 15px;
+  }
+
+  .imageContainer {
+    height: 180px;
+  }
+}
+
+@media (max-width: $mobile-breakpoint) {
+  .categoriesGrid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+    padding: 20px 10px;
+  }
+
+  .imageContainer {
+    height: 160px;
+  }
+
+  .categoryInfo {
+    padding: 15px;
+
+    h2 {
+      font-size: 1.1rem;
+    }
+
+    p {
+      font-size: 0.85rem;
+    }
+  }
+}

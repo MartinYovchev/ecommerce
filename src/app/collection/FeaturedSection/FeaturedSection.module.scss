@@ -1,0 +1,87 @@
+@use '../../styles/variables' as *;
+@use '../../styles/breakpoints' as *;
+
+.featuredSection {
+  background-color: $primary-color;
+  color: white;
+  padding: 60px 20px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.featuredContent {
+  max-width: 800px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+
+  h2 {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+  }
+
+  p {
+    font-size: 1.1rem;
+    margin-bottom: 25px;
+    opacity: 0.9;
+  }
+}
+
+.featuredButton {
+  display: inline-block;
+  padding: 12px 24px;
+  background-color: white;
+  color: $primary-color;
+  text-decoration: none;
+  border-radius: 4px;
+  font-weight: 500;
+  transition: all $transition;
+
+  &:hover {
+    background-color: rgba(255, 255, 255, 0.9);
+    transform: translateY(-2px);
+  }
+}
+
+@media (max-width: $tablet-breakpoint) {
+  .featuredSection {
+    padding: 50px 15px;
+  }
+
+  .featuredContent {
+    h2 {
+      font-size: 2.2rem;
+    }
+
+    p {
+      font-size: 1rem;
+    }
+  }
+
+  .featuredButton {
+    padding: 10px 20px;
+  }
+}
+
+@media (max-width: $mobile-breakpoint) {
+  .featuredSection {
+    padding: 40px 10px;
+  }
+
+  .featuredContent {
+    h2 {
+      font-size: 1.8rem;
+    }
+
+    p {
+      font-size: 0.9rem;
+      margin-bottom: 20px;
+    }
+  }
+
+  .featuredButton {
+    padding: 8px 16px;
+    font-size: 0.9rem;
+  }
+}

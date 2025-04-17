@@ -1,0 +1,104 @@
+@use '../../styles/variables' as *;
+@use '../../styles/breakpoints' as *;
+
+.brandsSection {
+  padding: 40px 20px;
+  background-color: $background-color;
+  text-align: center;
+}
+
+.brandsSection h2 {
+  font-size: 2rem;
+  margin-bottom: 30px;
+  color: $text-color;
+}
+
+.brandsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.brandCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  color: $text-color;
+  transition: transform $transition;
+
+  &:hover {
+    transform: translateY(-5px);
+  }
+}
+
+.brandLogoContainer {
+  width: 120px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
+  background-color: white;
+  border-radius: 8px;
+  padding: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.brandLogo {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.brandCard p {
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+@media (max-width: $tablet-breakpoint) {
+  .brandsSection {
+    padding: 30px 15px;
+  }
+
+  .brandsSection h2 {
+    font-size: 1.8rem;
+    margin-bottom: 25px;
+  }
+
+  .brandsGrid {
+    gap: 20px;
+  }
+
+  .brandLogoContainer {
+    width: 100px;
+    height: 70px;
+  }
+}
+
+@media (max-width: $mobile-breakpoint) {
+  .brandsSection {
+    padding: 20px 10px;
+  }
+
+  .brandsSection h2 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+  }
+
+  .brandsGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+  }
+
+  .brandLogoContainer {
+    width: 80px;
+    height: 60px;
+  }
+
+  .brandCard p {
+    font-size: 0.8rem;
+  }
+}
