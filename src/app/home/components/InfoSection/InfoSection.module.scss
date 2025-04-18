@@ -51,9 +51,9 @@
     position: relative;
     display: inline-block;
     background: linear-gradient(
-      120deg,
+      110deg,
       $primary-color,
-      darken($primary-color, 10%),
+      $secondary-color,
       #4b6cb7
     );
     -webkit-background-clip: text;

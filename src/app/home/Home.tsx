@@ -18,9 +18,7 @@ export default function Home() {
           Shop Now
         </Link>
       </header>
-
       <FeatureProducts />
-
       <InfoSection />
     </div>
   );

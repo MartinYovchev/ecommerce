@@ -8,7 +8,7 @@ export default function Story() {
         <div className={styles.imageContainer}>
           <div className={styles.imageWrapper}>
             <Image
-              src="/images/about/store.jpg"
+              src="/collection/limited-shoes.jpg"
               alt="Our store"
               width={500}
               height={300}

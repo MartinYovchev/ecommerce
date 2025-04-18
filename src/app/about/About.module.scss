@@ -23,13 +23,9 @@
   h1 {
     font-size: 3.5rem;
     margin-bottom: 24px;
-    background: linear-gradient(
-      135deg,
-      $primary-color,
-      darken($primary-color, 15%)
-    );
+    color: $primary-color;
+    background: linear-gradient(135deg, $primary-color);
     -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
     font-weight: 800;
 
     @media (max-width: 768px) {
@@ -121,7 +117,7 @@
       margin-bottom: 25px;
       line-height: 1.8;
       font-size: 1.1rem;
-      color: lighten($secondary-color, 10%);
+      color: $secondary-color;
 
       &:last-child {
         margin-bottom: 0;
@@ -166,11 +162,7 @@
       left: 0;
       width: 0%;
       height: 4px;
-      background: linear-gradient(
-        90deg,
-        $primary-color,
-        lighten($primary-color, 20%)
-      );
+      background: linear-gradient(90deg, $primary-color, $secondary-color);
       transition: all 0.4s ease;
       border-radius: 2px;
     }
@@ -211,7 +203,7 @@
       margin-bottom: 25px;
       line-height: 1.8;
       font-size: 1.1rem;
-      color: lighten($secondary-color, 10%);
+      color: $secondary-color;
     }
 
     ul {
@@ -221,7 +213,7 @@
         margin-bottom: 15px;
         line-height: 1.6;
         font-size: 1.1rem;
-        color: lighten($secondary-color, 10%);
+        color: $secondary-color;
         position: relative;
         padding-left: 25px;
 
@@ -304,11 +296,7 @@
       left: 0;
       width: 100%;
       height: 5px;
-      background: linear-gradient(
-        90deg,
-        $primary-color,
-        lighten($primary-color, 20%)
-      );
+      background: linear-gradient(90deg, $primary-color);
       transform: scaleX(0);
       transform-origin: left;
       transition: transform 0.4s ease;
@@ -364,7 +352,7 @@
     .bio {
       font-size: 1rem;
       line-height: 1.7;
-      color: lighten($secondary-color, 10%);
+      color: $secondary-color;
     }
   }
 }
@@ -450,15 +438,12 @@
   }
 
   .shopButton {
-    background: linear-gradient(
-      135deg,
-      $primary-color,
-      darken($primary-color, 10%)
-    );
+    background: $primary-color;
     color: white;
     box-shadow: 0 4px 15px rgba($primary-color, 0.3);
 
     &:hover {
+      background: $secondary-color;
       transform: translateY(-3px);
       box-shadow: 0 8px 25px rgba($primary-color, 0.4);
     }

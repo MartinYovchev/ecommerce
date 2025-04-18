@@ -4,21 +4,21 @@ export const teamMembers = [
     name: 'John Doe',
     role: 'Founder & CEO',
     bio: 'With over 15 years of experience in the footwear industry, John founded Sneakers with a vision to provide high-quality, stylish shoes at affordable prices.',
-    image: '/images/team/founder.jpg',
+    image: '/images_website/p1.jpg',
   },
   {
     id: 2,
     name: 'Jane Smith',
     role: 'Creative Director',
     bio: 'Jane brings her creative vision and industry expertise to ensure our designs are always ahead of the curve and meeting the highest standards.',
-    image: '/images/team/creative-director.jpg',
+    image: '/images_website/p1.jpg',
   },
   {
     id: 3,
     name: 'Mike Johnson',
     role: 'Head of Operations',
     bio: 'Mike oversees our global supply chain and ensures that our manufacturing processes are efficient, sustainable, and ethical.',
-    image: '/images/team/operations.jpg',
+    image: '/images_website/p1.jpg',
   },
 ];
 

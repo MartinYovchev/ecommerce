@@ -53,7 +53,7 @@ export const CartProvider: React.FC<CartProviderProps> = ({ children }) => {
         const existingProduct = updatedCart[existingProductIndex];
         updatedCart[existingProductIndex] = {
           ...existingProduct,
-          quantity: existingProduct.quantity + quantity,
+          // quantity: existingProduct.quantity + quantity,
         };
       } else {
         updatedCart.push({ ...product, quantity });
