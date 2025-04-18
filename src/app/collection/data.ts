@@ -7,7 +7,7 @@ export const categories: Category[] = [
     description:
       "Discover our collection of men's sneakers for style and performance.",
     image: '/collection/men-shoes.jpg',
-    link: '/men-shoes',
+    link: '/collection/men-shoes',
     featured: true,
   },
   {
@@ -15,7 +15,7 @@ export const categories: Category[] = [
     name: "Women's Shoes",
     description: "Explore our women's sneakers combining fashion and function.",
     image: '/collection/women-shoes.jpg',
-    link: '/women-shoes',
+    link: '/collection/women-shoes',
     featured: true,
   },
   {
@@ -23,7 +23,7 @@ export const categories: Category[] = [
     name: "Kids' Shoes",
     description: 'Fun and durable sneakers designed for active kids.',
     image: '/collection/kid-shoes.jpg',
-    link: '/kid-shoes',
+    link: '/collection/kid-shoes',
     featured: true,
   },
   {

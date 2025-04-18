@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import useFetchProductsByType from '@/app/hooks/useFetchingProductsByType';
+import Loading from '@/app/loading';
 import styles from './FeatureProducts.module.scss';
 
 type ProductImageType = {
@@ -67,7 +68,7 @@ export default function FeatureProducts() {
   };
 
   if (isLoading) {
-    return <div className={styles.loading}>Loading featured products...</div>;
+    return <Loading isLoading={true} />;
   }
 
   return (
@@ -76,7 +77,7 @@ export default function FeatureProducts() {
       <div className={styles.featuredGrid}>
         {featuredProducts.map((product) => (
           <Link
-            href={`/collection/${product.type}/${product.id}`}
+            href={`/collection/${product.type}/${product.name}`}
             key={product.id}
             className={styles.productCard}
           >

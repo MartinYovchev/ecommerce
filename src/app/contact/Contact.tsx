@@ -58,7 +58,6 @@ export default function Contact() {
       [name]: value,
     }));
 
-    // Clear error when user starts typing
     if (errors[name as keyof FormData]) {
       setErrors((prev) => ({
         ...prev,
@@ -126,10 +125,10 @@ export default function Contact() {
               or concerns.
             </p>
             <a
-              href="mailto:support@sneakers.com"
+              href="mailto:martin.yovchev03@gmail.com"
               className={styles.contactLink}
             >
-              support@sneakers.com
+              martin.yovchev03@gmail.com
             </a>
           </div>
 
@@ -151,10 +150,10 @@ export default function Contact() {
             <h3>Business Inquiries</h3>
             <p>For partnership opportunities and business-related questions.</p>
             <a
-              href="mailto:business@sneakers.com"
+              href="mailto:martin.yovchev03@gmail.com"
               className={styles.contactLink}
             >
-              business@sneakers.com
+              martin.yovchev03@gmail.com
             </a>
           </div>
 
@@ -176,11 +175,11 @@ export default function Contact() {
             <h3>Visit Our Store</h3>
             <p>Come see our products in person at our flagship store.</p>
             <address className={styles.address}>
-              123 Sneaker Street
+              Ivan Surailiev 2
               <br />
-              Footwear District
+              Studentski grad
               <br />
-              New York, NY 10001
+              Sofia, Bulgaria
             </address>
           </div>
 
@@ -201,8 +200,8 @@ export default function Contact() {
             </div>
             <h3>Phone Support</h3>
             <p>Speak directly with our customer service representatives.</p>
-            <a href="tel:+18005555555" className={styles.contactLink}>
-              1-800-555-5555
+            <a href="tel:+359879908084" className={styles.contactLink}>
+              +359 879 908 084
             </a>
             <p className={styles.hours}>Monday-Friday: 9am-6pm EST</p>
           </div>

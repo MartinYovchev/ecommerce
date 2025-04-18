@@ -49,7 +49,7 @@ function Navbar() {
           {dropdownOpen && (
             <div className={styles.dropdownMenu}>
               <Link
-                href="/men-shoes"
+                href="/collection/men-shoes"
                 onClick={() => {
                   setDropdownOpen(false);
                   setIsOpen(false);
@@ -58,7 +58,7 @@ function Navbar() {
                 Men Shoes
               </Link>
               <Link
-                href="/women-shoes"
+                href="/collection/women-shoes"
                 onClick={() => {
                   setDropdownOpen(false);
                   setIsOpen(false);
@@ -67,7 +67,7 @@ function Navbar() {
                 Women Shoes
               </Link>
               <Link
-                href="/kid-shoes"
+                href="/collection/kid-shoes"
                 onClick={() => {
                   setDropdownOpen(false);
                   setIsOpen(false);
