@@ -1,0 +1,560 @@
+@use '../../../styles/variables' as *;
+@use '../../../styles/breakpoints' as *;
+
+.infoSection {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 100px 30px;
+  box-sizing: border-box;
+  background-color: $background-color;
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(
+        circle at 5% 20%,
+        rgba($primary-color, 0.06) 0%,
+        transparent 70%
+      ),
+      radial-gradient(
+        circle at 95% 85%,
+        rgba(#8c5cf2, 0.05) 0%,
+        transparent 70%
+      ),
+      radial-gradient(
+        circle at 50% 50%,
+        rgba(#fff, 0.9) 0%,
+        rgba(#f8f9ff, 0.7) 100%
+      );
+    z-index: 0;
+  }
+}
+
+.infoHeader {
+  text-align: center;
+  margin-bottom: 70px;
+  position: relative;
+  z-index: 1;
+
+  h2 {
+    font-size: 2.8rem;
+    margin-bottom: 22px;
+    color: $primary-color;
+    font-weight: 800;
+    position: relative;
+    display: inline-block;
+    background: linear-gradient(
+      120deg,
+      $primary-color,
+      darken($primary-color, 10%),
+      #4b6cb7
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: -10px;
+      left: -10px;
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      background: linear-gradient(
+        135deg,
+        rgba($primary-color, 0.1),
+        rgba(#8c5cf2, 0.1)
+      );
+      z-index: -1;
+      filter: blur(1px);
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -15px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 90px;
+      height: 5px;
+      background: linear-gradient(
+        to right,
+        rgba($primary-color, 0.7),
+        $primary-color,
+        #4b6cb7
+      );
+      border-radius: 3px;
+    }
+  }
+}
+
+.subheading {
+  font-size: 1.25rem;
+  color: rgba(#444a6e, 0.9);
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.6;
+  font-weight: 400;
+}
+
+.infoBlocks {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 35px;
+  margin-bottom: 80px;
+  position: relative;
+  z-index: 1;
+}
+
+.infoBlock {
+  background: linear-gradient(to bottom, #ffffff, #f9faff);
+  border-radius: 16px;
+  padding: 40px 30px;
+  text-align: center;
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+  box-shadow:
+    0 10px 30px rgba(0, 0, 0, 0.04),
+    0 1px 3px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid rgba(#e6e9f9, 0.7);
+  position: relative;
+  overflow: hidden;
+
+  &::after {
+    content: '';
+    position: absolute;
+    width: 250px;
+    height: 250px;
+    background: radial-gradient(
+      circle,
+      rgba($primary-color, 0.04) 0%,
+      transparent 70%
+    );
+    top: -125px;
+    right: -125px;
+    border-radius: 50%;
+    z-index: 0;
+  }
+
+  &:hover {
+    transform: translateY(-12px);
+    box-shadow:
+      0 20px 40px rgba(70, 100, 200, 0.1),
+      0 5px 15px rgba(70, 100, 200, 0.05);
+    border-color: rgba(#e6e9f9, 0.9);
+
+    .iconContainer {
+      background: linear-gradient(135deg, $primary-color, #4b6cb7);
+      transform: scale(1.08);
+      box-shadow: 0 15px 25px rgba($primary-color, 0.2);
+
+      .icon {
+        filter: brightness(0) invert(1);
+        transform: scale(1.15);
+      }
+
+      &::after {
+        border-color: rgba(255, 255, 255, 0.3);
+      }
+    }
+
+    h3 {
+      background: linear-gradient(120deg, $primary-color, #4b6cb7);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+  }
+
+  h3 {
+    font-size: 1.4rem;
+    margin: 25px 0 16px;
+    color: #384069;
+    font-weight: 700;
+    transition: all 0.3s ease;
+    position: relative;
+    z-index: 1;
+  }
+
+  p {
+    font-size: 1.05rem;
+    color: rgba(#444a6e, 0.85);
+    line-height: 1.7;
+    margin: 0;
+    position: relative;
+    z-index: 1;
+  }
+}
+
+.iconContainer {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  background: linear-gradient(
+    135deg,
+    rgba($primary-color, 0.08),
+    rgba(#4b6cb7, 0.08)
+  );
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 15px;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  box-shadow: 0 10px 20px rgba($primary-color, 0.12);
+  position: relative;
+  z-index: 2;
+
+  &::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border: 2px dashed rgba($primary-color, 0.3);
+    top: -4px;
+    left: -4px;
+    animation: rotate 15s linear infinite;
+  }
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.icon {
+  transition: all 0.4s ease;
+  position: relative;
+  z-index: 2;
+  color: $primary-color;
+}
+
+.ctaSection {
+  background: linear-gradient(135deg, $primary-color, #4b6cb7, #182848);
+  border-radius: 20px;
+  padding: 70px 40px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  box-shadow:
+    0 20px 40px rgba(0, 0, 0, 0.15),
+    0 5px 10px rgba(0, 0, 0, 0.1);
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(
+      circle,
+      rgba(255, 255, 255, 0.15) 0%,
+      rgba(255, 255, 255, 0) 70%
+    );
+    z-index: -1;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: -100px;
+    left: -100px;
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(
+      circle,
+      rgba(255, 255, 255, 0.1) 0%,
+      rgba(255, 255, 255, 0) 70%
+    );
+    z-index: -1;
+  }
+}
+
+.ctaContent {
+  color: white;
+  max-width: 600px;
+  margin: 0 auto;
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    top: -50px;
+    right: -60px;
+    z-index: -1;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    bottom: -60px;
+    left: -40px;
+    z-index: -1;
+  }
+
+  h3 {
+    font-size: 2.2rem;
+    margin-bottom: 16px;
+    font-weight: 700;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+    letter-spacing: -0.5px;
+    background: linear-gradient(to right, #ffffff, #e0e7ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  p {
+    font-size: 1.2rem;
+    margin-bottom: 35px;
+    opacity: 0.95;
+    font-weight: 400;
+    line-height: 1.6;
+  }
+}
+
+.ctaButton {
+  display: inline-block;
+  background: linear-gradient(to right, #ffffff, #f9faff);
+  color: $primary-color;
+  font-size: 1.15rem;
+  font-weight: 700;
+  padding: 16px 40px;
+  border-radius: 50px;
+  text-decoration: none;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+  position: relative;
+  overflow: hidden;
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.6),
+      transparent
+    );
+    transition: all 0.6s ease;
+  }
+
+  &:hover {
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+    color: #4b6cb7;
+
+    &::after {
+      left: 100%;
+    }
+  }
+
+  &:active {
+    transform: translateY(-2px) scale(1.02);
+  }
+}
+
+/* Desktop Breakpoint */
+@media (max-width: $desktop-breakpoint) {
+  .infoSection {
+    padding: 80px 25px;
+  }
+
+  .infoHeader h2 {
+    font-size: 2.4rem;
+  }
+
+  .infoBlocks {
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 25px;
+  }
+
+  .ctaSection {
+    padding: 60px 35px;
+  }
+}
+
+/* Tablet Breakpoint */
+@media (max-width: $tablet-breakpoint) {
+  .infoSection {
+    padding: 70px 20px;
+  }
+
+  .infoHeader {
+    margin-bottom: 50px;
+
+    h2 {
+      font-size: 2.2rem;
+
+      &::after {
+        width: 70px;
+        height: 4px;
+      }
+    }
+  }
+
+  .subheading {
+    font-size: 1.15rem;
+  }
+
+  .infoBlocks {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 22px;
+    margin-bottom: 60px;
+  }
+
+  .infoBlock {
+    padding: 30px 20px;
+
+    h3 {
+      font-size: 1.3rem;
+      margin: 20px 0 12px;
+    }
+
+    p {
+      font-size: 1rem;
+    }
+  }
+
+  .iconContainer {
+    width: 80px;
+    height: 80px;
+  }
+
+  .ctaContent {
+    h3 {
+      font-size: 2rem;
+    }
+
+    p {
+      font-size: 1.1rem;
+    }
+  }
+
+  .ctaButton {
+    font-size: 1.1rem;
+    padding: 14px 35px;
+  }
+}
+
+/* Mobile Breakpoint */
+@media (max-width: #{$mobile-breakpoint + 160px}) {
+  .infoSection {
+    padding: 60px 15px;
+  }
+
+  .infoHeader {
+    margin-bottom: 40px;
+
+    h2 {
+      font-size: 1.9rem;
+
+      &::before {
+        top: -8px;
+        left: -5px;
+        width: 20px;
+        height: 20px;
+      }
+
+      &::after {
+        width: 60px;
+        height: 4px;
+        bottom: -12px;
+      }
+    }
+  }
+
+  .subheading {
+    font-size: 1.05rem;
+  }
+
+  .infoBlocks {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    margin-bottom: 50px;
+  }
+
+  .infoBlock {
+    padding: 30px 20px;
+
+    &:hover {
+      transform: translateY(-8px);
+    }
+
+    h3 {
+      font-size: 1.25rem;
+      margin: 18px 0 10px;
+    }
+
+    p {
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+  }
+
+  .iconContainer {
+    width: 70px;
+    height: 70px;
+
+    &::after {
+      top: -3px;
+      left: -3px;
+      border-width: 1px;
+    }
+  }
+
+  .ctaSection {
+    padding: 50px 25px;
+    border-radius: 16px;
+  }
+
+  .ctaContent {
+    h3 {
+      font-size: 1.7rem;
+      margin-bottom: 12px;
+    }
+
+    p {
+      font-size: 1rem;
+      margin-bottom: 25px;
+    }
+
+    &::before,
+    &::after {
+      display: none;
+    }
+  }
+
+  .ctaButton {
+    padding: 12px 30px;
+    font-size: 1rem;
+  }
+}

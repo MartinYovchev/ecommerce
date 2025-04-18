@@ -7,7 +7,7 @@ export const categories: Category[] = [
     description:
       "Discover our collection of men's sneakers for style and performance.",
     image: '/collection/men-shoes.jpg',
-    link: '/v2/products/men-shoes',
+    link: '/men-shoes',
     featured: true,
   },
   {
@@ -15,7 +15,7 @@ export const categories: Category[] = [
     name: "Women's Shoes",
     description: "Explore our women's sneakers combining fashion and function.",
     image: '/collection/women-shoes.jpg',
-    link: '/v2/products/women-shoes',
+    link: '/women-shoes',
     featured: true,
   },
   {
@@ -23,7 +23,7 @@ export const categories: Category[] = [
     name: "Kids' Shoes",
     description: 'Fun and durable sneakers designed for active kids.',
     image: '/collection/kid-shoes.jpg',
-    link: '/v2/products/kid-shoes',
+    link: '/kid-shoes',
     featured: true,
   },
   {
@@ -31,7 +31,7 @@ export const categories: Category[] = [
     name: 'Running',
     description: 'High-performance running shoes for all terrains.',
     image: '/collection/running-shoes.jpg',
-    link: '/v2/products/running-shoes',
+    link: '/collection/running-shoes',
     featured: false,
   },
   {
@@ -39,7 +39,7 @@ export const categories: Category[] = [
     name: 'Basketball',
     description: 'Court-ready basketball shoes for optimal performance.',
     image: '/collection/basketball-shoes.jpg',
-    link: '/v2/products/basketball-shoes',
+    link: '/collection/basketball-shoes',
     featured: false,
   },
   {
@@ -47,7 +47,7 @@ export const categories: Category[] = [
     name: 'Casual',
     description: 'Everyday casual sneakers for comfort and style.',
     image: '/collection/casual-shoes.jpg',
-    link: '/v2/products/casual-shoes',
+    link: '/collection/casual-shoes',
     featured: false,
   },
   {
@@ -55,7 +55,7 @@ export const categories: Category[] = [
     name: 'Limited Edition',
     description: 'Exclusive, limited-run sneakers for collectors.',
     image: '/collection/limited-shoes.jpg',
-    link: '/v2/products/limited-edition',
+    link: '/collection/limited-edition',
     featured: false,
   },
   {
@@ -63,7 +63,7 @@ export const categories: Category[] = [
     name: 'On Sale',
     description: 'Premium sneakers at discounted prices.',
     image: '/collection/sale-shoes.jpg',
-    link: '/v2/products/sale',
+    link: '/collection/sale',
     featured: false,
   },
 ];
@@ -71,7 +71,7 @@ export const categories: Category[] = [
 export const brands: Brand[] = [
   { id: 'nike', name: 'Nike', logo: '/brands/nike.png' },
   { id: 'adidas', name: 'Adidas', logo: '/brands/adidas.png' },
-  { id: 'newbalance', name: 'New Balance', logo: '/brands/newbalance.png' },
+  { id: 'newbalance', name: 'New Balance', logo: '/brands/newBalance.png' },
   { id: 'puma', name: 'Puma', logo: '/brands/puma.png' },
   { id: 'reebok', name: 'Reebok', logo: '/brands/reebok.png' },
   { id: 'converse', name: 'Converse', logo: '/brands/converse.png' },

@@ -3,12 +3,12 @@
 import { useState } from 'react';
 import styles from './Collection.module.scss';
 import { categories, brands, infoCards } from './data';
-import Hero from './Hero/Hero';
-import FilterSection from './FilterSection/FilterSection';
-import CategoriesGrid from './CategoriesGrid/CategoriesGrid';
-import BrandsSection from './BrandsSection/BrandsSection';
-import FeaturedSection from './FeaturedSection/FeaturedSection';
-import InfoSection from './InfoSection/InfoSection';
+import Hero from './components/Hero/Hero';
+import FilterSection from './components/FilterSection/FilterSection';
+import CategoriesGrid from './components/CategoriesGrid/CategoriesGrid';
+import BrandsSection from './components/BrandsSection/BrandsSection';
+import FeaturedSection from './components/FeaturedSection/FeaturedSection';
+import InfoSection from './components/InfoSection/InfoSection';
 
 export default function Collection() {
   const [currentFilter, setCurrentFilter] = useState('all');
