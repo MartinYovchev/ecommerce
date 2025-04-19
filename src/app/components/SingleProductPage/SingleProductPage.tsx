@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useParams } from 'next/navigation';
@@ -19,6 +19,8 @@ export default function SingleProductPage({ type }: { type: string }) {
   const [selectedSize, setSelectedSize] = useState<string | null>(null);
   const [quantity, setQuantity] = useState(1);
   const [addToCartError, setAddToCartError] = useState<string | null>(null);
+  const [showImageOverlay, setShowImageOverlay] = useState(false);
+  const [selectedImage, setSelectedImage] = useState(0);
 
   const handleSizeSelect = (size: string) => {
     setSelectedSize(size);
@@ -52,12 +54,75 @@ export default function SingleProductPage({ type }: { type: string }) {
     alert('Product added to cart!');
   };
 
+  const handleImageOverlayClick = (e: React.MouseEvent) => {
+    if (e.target === e.currentTarget) {
+      setShowImageOverlay(false);
+    }
+  };
+
+  const handleImageClick = (index: number) => {
+    setSelectedImage(index);
+    setShowImageOverlay(true);
+  };
+
+  const navigateToPrevImage = () => {
+    if (!product?.images?.length) return;
+    setSelectedImage((prev) =>
+      prev === 0 ? product.images.length - 1 : prev - 1
+    );
+  };
+
+  const navigateToNextImage = () => {
+    if (!product?.images?.length) return;
+    setSelectedImage((prev) =>
+      prev === product.images.length - 1 ? 0 : prev + 1
+    );
+  };
+
+  // Handle keyboard events for navigation
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (showImageOverlay) {
+        if (e.key === 'Escape') {
+          setShowImageOverlay(false);
+        } else if (
+          e.key === 'ArrowLeft' &&
+          product?.images &&
+          product.images.length > 1
+        ) {
+          navigateToPrevImage();
+        } else if (
+          e.key === 'ArrowRight' &&
+          product?.images &&
+          product.images.length > 1
+        ) {
+          navigateToNextImage();
+        }
+      }
+    };
+
+    // Prevent body scrolling when overlay is open
+    if (showImageOverlay) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+
+    window.addEventListener('keydown', handleKeyDown);
+    return () => {
+      window.removeEventListener('keydown', handleKeyDown);
+      document.body.style.overflow = '';
+    };
+  }, [showImageOverlay, product]);
+
   if (loading) return <Loading isLoading={true} />;
   if (error) return <div className={styles.errorMessage}>{error}</div>;
   if (!product)
     return <div className={styles.errorMessage}>Product not found</div>;
 
   const availableSizes = ['36', '37', '38', '39', '40', '41', '42', '43'];
+  const hasMultipleImages = product.images && product.images.length > 1;
+  const currentImage = product.images && product.images[selectedImage];
 
   return (
     <div className={styles.container}>
@@ -71,14 +136,85 @@ export default function SingleProductPage({ type }: { type: string }) {
 
       <div className={styles.productContainer}>
         <div className={styles.imageContainer}>
-          {product.images && product.images[0] && (
-            <Image
-              src={product.images[0].url}
-              alt={product.images[0].alt || product.name}
-              width={500}
-              height={500}
-              priority
-            />
+          {currentImage && (
+            <>
+              <Image
+                src={currentImage.url}
+                alt={currentImage.alt || product.name}
+                width={500}
+                height={500}
+                priority
+                onClick={() => setShowImageOverlay(true)}
+              />
+
+              {hasMultipleImages && (
+                <div className={styles.thumbnailContainer}>
+                  {product.images.map((image, index) => (
+                    <div
+                      key={index}
+                      className={`${styles.thumbnail} ${selectedImage === index ? styles.activeThumbnail : ''}`}
+                      onClick={() => handleImageClick(index)}
+                    >
+                      <Image
+                        src={image.url}
+                        alt={
+                          image.alt || `${product.name} - image ${index + 1}`
+                        }
+                        width={100}
+                        height={100}
+                      />
+                    </div>
+                  ))}
+                </div>
+              )}
+
+              {showImageOverlay && currentImage && (
+                <div
+                  className={styles.imageOverlay}
+                  onClick={handleImageOverlayClick}
+                >
+                  <div className={styles.overlayContent}>
+                    <button
+                      className={styles.closeButton}
+                      onClick={() => setShowImageOverlay(false)}
+                    >
+                      ×
+                    </button>
+
+                    {hasMultipleImages && (
+                      <>
+                        <button
+                          className={`${styles.navButton} ${styles.prevButton}`}
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            navigateToPrevImage();
+                          }}
+                        >
+                          ‹
+                        </button>
+                        <button
+                          className={`${styles.navButton} ${styles.nextButton}`}
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            navigateToNextImage();
+                          }}
+                        >
+                          ›
+                        </button>
+                      </>
+                    )}
+
+                    <Image
+                      src={currentImage.url}
+                      alt={currentImage.alt || product.name}
+                      width={800}
+                      height={800}
+                      priority
+                    />
+                  </div>
+                </div>
+              )}
+            </>
           )}
         </div>
 
