@@ -6,12 +6,12 @@ export default function Page() {
 export async function generateMetadata({
   params,
 }: {
-  params: { product: string };
+  params: Promise<{ product: string }>;
 }) {
-  const productName = await params.product;
+  const { product } = await params;
 
   return {
-    title: `${productName} | Women Shoes | Ecommerce`,
-    description: `Shop for ${productName} women shoes. Find the perfect fit for your children.`,
+    title: `${product} | Women Shoes | Ecommerce`,
+    description: `Shop for ${product} women shoes. Find the perfect fit for your children.`,
   };
 }

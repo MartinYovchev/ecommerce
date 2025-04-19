@@ -65,38 +65,12 @@ export default function SingleProductPage({ type }: { type: string }) {
     setShowImageOverlay(true);
   };
 
-  const navigateToPrevImage = () => {
-    if (!product?.images?.length) return;
-    setSelectedImage((prev) =>
-      prev === 0 ? product.images.length - 1 : prev - 1
-    );
-  };
-
-  const navigateToNextImage = () => {
-    if (!product?.images?.length) return;
-    setSelectedImage((prev) =>
-      prev === product.images.length - 1 ? 0 : prev + 1
-    );
-  };
-
   // Handle keyboard events for navigation
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       if (showImageOverlay) {
         if (e.key === 'Escape') {
           setShowImageOverlay(false);
-        } else if (
-          e.key === 'ArrowLeft' &&
-          product?.images &&
-          product.images.length > 1
-        ) {
-          navigateToPrevImage();
-        } else if (
-          e.key === 'ArrowRight' &&
-          product?.images &&
-          product.images.length > 1
-        ) {
-          navigateToNextImage();
         }
       }
     };
@@ -187,7 +161,6 @@ export default function SingleProductPage({ type }: { type: string }) {
                           className={`${styles.navButton} ${styles.prevButton}`}
                           onClick={(e) => {
                             e.stopPropagation();
-                            navigateToPrevImage();
                           }}
                         >
                           ‹
@@ -196,7 +169,6 @@ export default function SingleProductPage({ type }: { type: string }) {
                           className={`${styles.navButton} ${styles.nextButton}`}
                           onClick={(e) => {
                             e.stopPropagation();
-                            navigateToNextImage();
                           }}
                         >
                           ›

@@ -8,7 +8,7 @@ export async function generateMetadata({
 }: {
   params: { product: string };
 }) {
-  const productName = await params.product;
+  const productName = params.product;
 
   return {
     title: `${productName} | Kids Shoes | Ecommerce`,

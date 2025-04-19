@@ -60,3 +60,7 @@ design
 images
 README-template.md
 style-guide.md
+
+api/create-payment-intent/route.ts
+api/payment-success/page.tsx
+api/payment-failed/page.tsx
