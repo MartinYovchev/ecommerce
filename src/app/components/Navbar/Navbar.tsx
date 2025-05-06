@@ -5,6 +5,8 @@ import Link from 'next/link';
 import { useState, useRef, MouseEvent } from 'react';
 import styles from './Navbar.module.scss';
 import useClickAway from '../../hooks/useClickAway';
+import { useAuth } from '../../context/AuthContext';
+import { useIsLoggedIn } from '../../hooks/useIsLoggedIn';
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -12,6 +14,9 @@ function Navbar() {
 
   const menuRef = useRef<HTMLDivElement | null>(null);
   const dropdownRef = useRef<HTMLDivElement | null>(null);
+
+  const { user, logout } = useAuth();
+  const isLoggedIn = useIsLoggedIn();
 
   const toggleMenu = () => setIsOpen(!isOpen);
   const toggleDropdown = (e: MouseEvent) => {
@@ -106,26 +111,37 @@ function Navbar() {
           Contact
         </Link>
 
-        <Link
-          href="/login"
-          className={styles.loginButton}
-          onClick={() => {
-            setDropdownOpen(false);
-            setIsOpen(false);
-          }}
-        >
-          Login
-        </Link>
-        <Link
-          href="/signup"
-          className={styles.signupButton}
-          onClick={() => {
-            setDropdownOpen(false);
-            setIsOpen(false);
-          }}
-        >
-          Sign Up
-        </Link>
+        {isLoggedIn ? (
+          <div className={styles.userSection}>
+            <span className={styles.userName}>Welcome, {user?.name}</span>
+            <button onClick={logout} className={styles.logoutButton}>
+              Logout
+            </button>
+          </div>
+        ) : (
+          <div className={styles.authButtons}>
+            <Link
+              href="/login"
+              className={styles.loginButton}
+              onClick={() => {
+                setDropdownOpen(false);
+                setIsOpen(false);
+              }}
+            >
+              Login
+            </Link>
+            <Link
+              href="/signup"
+              className={styles.signupButton}
+              onClick={() => {
+                setDropdownOpen(false);
+                setIsOpen(false);
+              }}
+            >
+              Sign Up
+            </Link>
+          </div>
+        )}
       </div>
 
       <div className={styles.burger} onClick={toggleMenu}>

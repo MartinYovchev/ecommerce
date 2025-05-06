@@ -89,7 +89,7 @@ export default function SingleProductPage({ type }: { type: string }) {
     };
   }, [showImageOverlay, product]);
 
-  if (loading) return <Loading isLoading={true} />;
+  if (loading) return <Loading />;
   if (error) return <div className={styles.errorMessage}>{error}</div>;
   if (!product)
     return <div className={styles.errorMessage}>Product not found</div>;

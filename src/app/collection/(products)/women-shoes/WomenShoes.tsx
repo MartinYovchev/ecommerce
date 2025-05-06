@@ -54,7 +54,7 @@ export default function WomenShoesPage() {
     return result;
   }, [products, sortBy, filters]);
 
-  if (loading) return <Loading isLoading={true} />;
+  if (loading) return <Loading />;
   if (error) return <div className={styles.error}>{error}</div>;
 
   return (

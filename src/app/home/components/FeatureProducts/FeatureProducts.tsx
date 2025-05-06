@@ -68,7 +68,7 @@ export default function FeatureProducts() {
   };
 
   if (isLoading) {
-    return <Loading isLoading={true} />;
+    return <Loading />;
   }
 
   return (

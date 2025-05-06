@@ -130,6 +130,33 @@
   cursor: pointer;
 }
 
+.userSection {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.userName {
+  font-weight: 500;
+  color: $text-color;
+}
+
+.logoutButton {
+  padding: 0.5rem 1rem;
+  border: 1px solid #dc3545;
+  border-radius: 4px;
+  background-color: transparent;
+  color: #dc3545;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.2s ease;
+
+  &:hover {
+    background-color: #dc3545;
+    color: white;
+  }
+}
+
 @media (max-width: 768px) {
   .logo {
     padding-left: 3rem;

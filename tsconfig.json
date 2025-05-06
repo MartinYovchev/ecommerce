@@ -30,11 +30,12 @@
     }
   },
   "include": [
-    "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts",
-    "src/app/collection/page.tsx"
+    "next-env.d.ts",
+    "src/app/collection/page.tsx",
+    "out/types/**/*.ts"
   ],
   "exclude": ["node_modules"]
 }
